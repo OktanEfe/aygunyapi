@@ -1,0 +1,12 @@
+[
+    { "name": "Antrasit", "texture": "/kartela/mdflam/antrasit.jpg" },
+    { "name": "Ceviz Bronze", "texture": "/kartela/mdflam/ceviz-bronze.jpg" },
+    { "name": "Ceviz Country", "texture": "/kartela/mdflam/ceviz-country.jpg" },
+    { "name": "Meşe Latte", "texture": "/kartela/mdflam/mese-latte.jpg" },
+    { "name": "Meşe Natural", "texture": "/kartela/mdflam/mese-natural.jpg" },
+    { "name": "Beyaz Soft", "texture": "/kartela/mdflam/beyaz-soft.jpg" },
+    { "name": "Gri Beton", "texture": "/kartela/mdflam/gri-beton.jpg" },
+    { "name": "Metalik Gri", "texture": "/kartela/mdflam/metalik-gri.jpg" },
+    { "name": "Krem", "texture": "/kartela/mdflam/krem.jpg" },
+    { "name": "Walnut Elegant", "texture": "/kartela/mdflam/walnut-elegant.jpg" }
+  ]

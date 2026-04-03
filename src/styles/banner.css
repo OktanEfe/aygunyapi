@@ -1,0 +1,162 @@
+/* BANNER ANA ALAN */
+#banner {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* ---------------------------------------------------
+     ARKAPLAN GEÇİŞİ (GECE → GÜNDÜZ → GECE)
+  ---------------------------------------------------- */
+  .sky-layer {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+      #0a1931 0%,        /* gece mavisi */
+      #274874 20%,      
+      #87a8d0 40%,       /* sabah */
+      #ffd36b 60%,       /* güneş */
+      #d48b2a 80%,       /* akşam */
+      #0a1931 100%       /* tekrar gece */
+    );
+    background-size: 400% 100%;
+    animation: skyCycle 20s ease-in-out infinite;
+    z-index: 1;
+  }
+  
+  @keyframes skyCycle {
+    0% { background-position: 0% 0; }
+    50% { background-position: 100% 0; }
+    100% { background-position: 0% 0; }
+  }
+  
+  /* ---------------------------------------------------
+     AY
+  ---------------------------------------------------- */
+  .moon {
+    position: absolute;
+    top: 40px;
+    left: 120px;
+    width: 130px;
+    height: 130px;
+    background: radial-gradient(circle, #ffffff 0%, #d9d9d9 40%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0.9;
+    animation: moonMove 20s ease-in-out infinite;
+    z-index: 2;
+  }
+  
+  @keyframes moonMove {
+    0% { transform: translateX(0px); opacity: 1; }
+    40% { opacity: 0; }
+    50% { opacity: 0; }
+    80% { opacity: 0.3; }
+    100% { transform: translateX(0px); opacity: 1; }
+  }
+  
+  /* ---------------------------------------------------
+     GÜNEŞ
+  ---------------------------------------------------- */
+  .sun {
+    position: absolute;
+    top: 60px;
+    right: 120px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, #ffe29a 0%, #ffbb33 40%, transparent 80%);
+    border-radius: 50%;
+    filter: blur(6px);
+    opacity: 0;
+    animation: sunMove 20s ease-in-out infinite;
+    z-index: 2;
+  }
+  
+  @keyframes sunMove {
+    0%, 20% { opacity: 0; }
+    40% { opacity: 1; transform: translateY(-10px); }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  /* ---------------------------------------------------
+     GECE SİSİ
+  ---------------------------------------------------- */
+  .night-fog {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 200%;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    filter: blur(18px);
+    opacity: 0.4;
+    animation: fogMove 14s linear infinite;
+    z-index: 3;
+  }
+  
+  @keyframes fogMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  /* ---------------------------------------------------
+     BULUTLAR (GÜNDÜZ GÖRÜNÜR)
+  ---------------------------------------------------- */
+  .cloud {
+    position: absolute;
+    top: 70px;
+    width: 220px;
+    height: 70px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50px;
+    filter: blur(4px);
+    opacity: 0;
+    z-index: 3;
+    animation: cloudFade 20s infinite;
+  }
+  
+  .cloud-1 {
+    left: -200px;
+    animation: cloudMove1 30s linear infinite, cloudFade 20s infinite;
+  }
+  
+  .cloud-2 {
+    right: -250px;
+    animation: cloudMove2 28s linear infinite, cloudFade 20s infinite;
+  }
+  
+  @keyframes cloudMove1 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(1800px); }
+  }
+  
+  @keyframes cloudMove2 {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-1800px); }
+  }
+  
+  @keyframes cloudFade {
+    0%, 20% { opacity: 0; }
+    40%, 70% { opacity: 0.6; }
+    100% { opacity: 0; }
+  }
+  
+  /* ---------------------------------------------------
+     SLOGAN
+  ---------------------------------------------------- */
+  .banner-content {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .banner-content h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  }

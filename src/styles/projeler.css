@@ -1,0 +1,192 @@
+/* GENEL SAYFA */
+.projeler-page {
+  padding-top: 6rem;
+  background: #f7f7f8;
+}
+
+/* --------------- HERO --------------- */
+.proje-hero {
+  height: 42vh;
+  min-height: 260px;
+  background: url("/assets/projects/hero.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proje-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 49, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.proje-hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+
+.proje-hero-inner h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.proje-hero-inner p {
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+/* --------------- ABOUT --------------- */
+.proje-about {
+  padding: 80px 0 40px;
+}
+
+.proje-about-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 0 1.5rem;
+}
+
+.proje-about-image {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.15);
+}
+
+.proje-about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.proje-about-text h2 {
+  color: var(--midnight);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.proje-about-text p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* --------------- LISTE --------------- */
+.proje-section {
+  padding: 40px 0;
+}
+
+.proje-section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.proje-section-inner h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--midnight);
+  margin-bottom: 10px;
+}
+
+.proje-grid {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 30px;
+}
+
+.proje-card {
+  background: white;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  transition: .35s ease;
+}
+
+.proje-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 42px rgba(0,0,0,.18);
+}
+
+.proje-img-wrapper {
+  height: 230px;
+  overflow: hidden;
+}
+
+.proje-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .45s ease;
+}
+
+.proje-card:hover .proje-img {
+  transform: scale(1.06);
+}
+
+.proje-card-body {
+  padding: 18px 20px 26px;
+  text-align: left;
+}
+
+.proje-title {
+  font-weight: 700;
+  color: var(--midnight);
+  font-size: 1.25rem;
+}
+
+.proje-meta {
+  margin: 6px 0 10px;
+  color: #777;
+  font-size: .92rem;
+}
+
+.proje-desc {
+  color: #555;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+/* --------------- CTA --------------- */
+
+.proje-cta-wrapper {
+  padding: 80px 0 140px;
+}
+
+.proje-cta {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #0a1a2b, #193a63);
+  color: white;
+  padding: 60px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 16px 50px rgba(0,0,0,.22);
+}
+
+.proje-cta h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.proje-cta p {
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .proje-about-inner {
+    grid-template-columns: 1fr;
+  }
+}

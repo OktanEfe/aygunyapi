@@ -1,0 +1,66 @@
+.btn-outline-anim {
+    position: relative;
+    overflow: hidden;
+    padding: 14px 40px;
+    border-radius: 999px;
+    border: 2px solid #000;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    z-index: 1;
+  }
+  
+  /* Soldan midnight-blue ile dolan arka plan */
+  .btn-outline-anim::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0%;
+    background: var(--midnight, #0a1a2b);
+    transition: width 0.35s ease-in-out;
+    z-index: -1;
+  }
+  
+  /* Hover efekti */
+  .btn-outline-anim:hover::before {
+    width: 100%;
+  }
+  
+  .btn-outline-anim:hover {
+    color: #fff;
+    border-color: var(--midnight, #0a1a2b);
+  }
+  
+  .btn-outline-anim .arrow {
+    transition: transform 0.25s ease;
+  }
+  
+  .btn-outline-anim:hover .arrow {
+    transform: translateX(4px);
+  }
+  /* CTA içindeki buton ezilmesin diye */
+.proje-cta .primary-btn {
+  background: #fff !important;
+  color: #0a1a2b !important;
+  border: 2px solid #0a1a2b !important;
+}
+/* CTA Bölümü için beyaz varyant */
+.btn-outline-anim.white-btn {
+  border: 2px solid #fff !important;
+  color: #fff !important;
+  background: transparent !important;
+}
+
+.btn-outline-anim.white-btn::before {
+  background: #fff !important;
+}
+
+.btn-outline-anim.white-btn:hover {
+  color: var(--midnight) !important;
+  border-color: #fff !important;
+}

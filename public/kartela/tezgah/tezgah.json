@@ -1,0 +1,20 @@
+{
+    "mermer": [
+      { "name": "Calacatta Gold", "texture": "/kartela/tezgah/calacatta-gold.jpg" },
+      { "name": "Nero Marquina", "texture": "/kartela/tezgah/nero-marquina.jpg" },
+      { "name": "Carrara White", "texture": "/kartela/tezgah/carrara-white.jpg" },
+      { "name": "Emperador Dark", "texture": "/kartela/tezgah/emperador-dark.jpg" }
+    ],
+    "granit": [
+      { "name": "Black Galaxy", "texture": "/kartela/tezgah/black-galaxy.jpg" },
+      { "name": "Grey Granite", "texture": "/kartela/tezgah/grey-granite.jpg" },
+      { "name": "White Granite", "texture": "/kartela/tezgah/white-granite.jpg" }
+    ],
+    "quartz": [
+      { "name": "Statuario", "texture": "/kartela/tezgah/statuario.jpg" },
+      { "name": "Ice White", "texture": "/kartela/tezgah/ice-white.jpg" }
+    ],
+    "ahsap": [
+      { "name": "Natural Oak", "texture": "/kartela/tezgah/natural-oak.jpg" }
+    ]
+  }

@@ -1,0 +1,23 @@
+/* NAVBAR (SADE – TAILWIND UYUMLU) */
+
+.navbar-custom {
+  z-index: 1050;
+}
+
+.navbar-link {
+  color: var(--black);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-link:hover {
+  color: var(--midnight);
+}
+
+/* Mobil açılınca içerik hizalama */
+@media (max-width: 992px) {
+  .navbar-mobile {
+    text-align: center;
+    margin-top: 10px;
+  }
+}

@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "isim": "Yalova Konut Projesi",
+      "konum": "Yalova",
+      "tarih": "2024",
+      "aciklama": "Modern cephe tasarımı, geniş balkonlar ve yeşil alanlarla 36 dairelik konut projesi.",
+      "resim": "/assets/projects/yalova-konut.jpg"
+    },
+    {
+      "id": 2,
+      "isim": "İstanbul Ofis Düzenleme",
+      "konum": "İstanbul",
+      "tarih": "2023",
+      "aciklama": "Kurumsal kimliğe uygun, açık ofis ve toplantı alanlarından oluşan modern ofis iç mimarisi.",
+      "resim": "/assets/projects/istanbul-ofis.jpg"
+    },
+    {
+      "id": 3,
+      "isim": "Teras Kafe Tasarımı",
+      "konum": "Bursa",
+      "tarih": "2023",
+      "aciklama": "Şehir manzaralı, yeşil dokunuşlar ve akşam aydınlatmalarıyla öne çıkan teras kafe projesi.",
+      "resim": "/assets/projects/teras-kafe.jpg"
+    },
+    {
+      "id": 4,
+      "isim": "Dış Cephe Yenileme",
+      "konum": "Kocaeli",
+      "tarih": "2022",
+      "aciklama": "Eski yapının kimliğini baştan yazan enerji verimli dış cephe yenileme uygulaması.",
+      "resim": "/assets/projects/dis-cephe.jpg"
+    },
+    {
+      "id": 5,
+      "isim": "Villa İç Tasarım",
+      "konum": "Sapanca",
+      "tarih": "2022",
+      "aciklama": "Doğal malzemeler ve sıcak renklerin kullanıldığı modern villa iç mekan tasarımı.",
+      "resim": "/assets/projects/villa-ic.jpg"
+    },
+    {
+      "id": 6,
+      "isim": "Showroom Düzenleme",
+      "konum": "Gebze",
+      "tarih": "2021",
+      "aciklama": "Ürünlerin ön plana çıktığı, ziyaretçi akışına göre kurgulanmış showroom projesi.",
+      "resim": "/assets/projects/showroom.jpg"
+    }
+  ]

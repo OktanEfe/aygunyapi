@@ -1,0 +1,37 @@
+.kartela-page {
+    padding-top: 7rem;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .kategori-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 20px;
+  }
+  
+  .kategori-btn {
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: #eee;
+    border: 2px solid #ccc;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .kategori-btn.active {
+    background: var(--midnight);
+    color: #fff;
+    border-color: var(--midnight);
+  }
+  
+  .scene-container {
+    margin-top: 40px;
+    height: 70vh;
+  }
