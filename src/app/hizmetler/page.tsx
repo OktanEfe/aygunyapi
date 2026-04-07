@@ -18,14 +18,7 @@ export default function ServicesPage() {
       <SignatureService />
       <ProcessStrip />
 
-      <section className="py-24 bg-white border-b border-black/5">
-        <div className="container mx-auto px-6 text-center max-w-3xl">
-          <h3 className="text-2xl md:text-4xl font-extralight text-[#0A1A2B] leading-tight mb-8">
-            &quot;Sıradan bir uygulayıcıdan öte, mekanın ruhuna dokunan bir <span className="font-serif italic text-black/30">zanaat anlayışıyla </span> çalışıyoruz.&quot;
-          </h3>
-          <div className="h-px w-12 bg-[#0A1A2B]/10 mx-auto" />
-        </div>
-      </section>
+     
 
       <ServicesCTA />
     </main>

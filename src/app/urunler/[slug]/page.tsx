@@ -192,41 +192,63 @@ export default function ProductDetail() {
         </div>
       </section>
 
-      <section className="bg-[#FAFAFA] py-24">
-        <div className="container mx-auto px-6">
-          <div className="mb-14 max-w-2xl">
-            <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.4em] text-black/30">
-              Uygulama Alanları
-            </p>
-            <h2 className="text-3xl font-extralight tracking-tight text-[#0A1A2B] md:text-5xl">
-              Farklı yaşam alanlarında <br className="hidden md:block" />
-              güçlü kullanım senaryoları.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {product.usageAreas.map((area) => (
-              <div
-                key={area}
-                className="rounded-[2rem] bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)]"
-              >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-[#0A1A2B]/5 text-[#0A1A2B]">
-                  <i className="bi bi-check2 text-base"></i>
-                </div>
-
-                <h3 className="text-lg font-light tracking-tight text-[#0A1A2B]">
-                  {area}
-                </h3>
-
-                <p className="mt-3 text-sm leading-7 text-black/45">
-                  Bu yüzey, estetik görünümünü korurken uygulama kalitesi ve kullanım
-                  dengesini destekler.
-                </p>
-              </div>
-            ))}
-          </div>
+      <section className="bg-[#F5F5F7] py-24 md:py-32">
+  <div className="container mx-auto px-6">
+    {/* Header */}
+    <div className="mb-20 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+      <div className="max-w-2xl">
+        <div className="mb-6 flex items-center gap-3">
+          <div className="h-[1px] w-8 bg-[#0A1A2B]/20" />
+          <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#0A1A2B]/40">
+            Uygulama Alanları
+          </p>
         </div>
-      </section>
+        <h2 className="text-4xl font-extralight tracking-tight text-[#0A1A2B] md:text-6xl">
+          Farklı yaşam alanlarında <br />
+          <span className="font-serif italic text-black/20 text-5xl md:text-7xl">güçlü kullanım senaryoları.</span>
+        </h2>
+      </div>
+    </div>
+
+    {/* Kartlar Grid */}
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {product.usageAreas.map((area, index) => (
+        <div
+          key={area}
+          className="group relative flex flex-col justify-between rounded-[2.5rem] border border-white/10 bg-[#0A1A2B] p-10 transition-all duration-700 hover:bg-[#0E2136] hover:shadow-[0_30px_60px_rgba(0,0,0,0.15)] md:p-12"
+        >
+          <div>
+            <div className="mb-12 flex items-center justify-between">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/5 text-white/70 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:text-white">
+                <i className="bi bi-check2 text-xl"></i>
+              </div>
+              
+              <span className="font-serif text-3xl italic text-white/5 transition-colors duration-500 group-hover:text-white/10">
+                0{index + 1}
+              </span>
+            </div>
+            
+            <h3 className="mb-6 text-2xl font-light leading-snug tracking-tight text-white md:text-3xl">
+              {area}
+            </h3>
+          </div>
+
+          <div>
+            <p className="text-[15px] leading-relaxed text-white/50 transition-colors duration-500 group-hover:text-white/70">
+              Bu yüzey, estetik görünümünü korurken uygulama kalitesi ve kullanım dengesini destekler.
+            </p>
+            
+            <div className="mt-8 flex h-10 w-10 scale-90 items-center justify-center rounded-full border border-white/10 text-white/40 opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100 group-hover:text-white">
+              <i className="bi bi-arrow-up-right text-xs"></i>
+            </div>
+          </div>
+
+          <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-[2.5rem] pointer-events-none" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="bg-white py-24">
         <div className="container mx-auto px-6">

@@ -1,7 +1,7 @@
 import { CategoryShowcase } from "@/components/urunler/category";
 import { ProductAdvisory } from "@/components/urunler/CTA";
 import ProductsHero from "@/components/urunler/hero";
-import { ArrowUpRight, Compass, MapPin, Layers, Grid } from "lucide-react"; // İkonlar için
+import { ArrowUpRight, Compass, MapPin, Layers, Grid } from "lucide-react"; 
 
 
 export default function ProductsPage() {
