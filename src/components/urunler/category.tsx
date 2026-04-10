@@ -1,33 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-
-const productCats = [
-  {
-    title: "Mutfak Sistemleri",
-    slug: "mutfak",
-    img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f",
-    desc: "Kapak, tezgah ve yüzey uyumunu bir arada sunan seçili çözümler.",
-  },
-  {
-    title: "Banyo Serileri",
-    slug: "banyo",
-    img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a",
-    desc: "Nem, kullanım yoğunluğu ve estetik denge gözetilerek seçilen seriler.",
-  },
-  {
-    title: "Panel & Kapak",
-    slug: "kapak",
-    img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88",
-    desc: "Mat, lake ve doğal doku yüzeylerle rafine panel alternatifleri.",
-  },
-  {
-    title: "Kuvars Tezgahlar",
-    slug: "tezgah",
-    img: "https://images.unsplash.com/photo-1600585152220-90363fe7e115",
-    desc: "Dayanıklılığı güçlü görünümle birleştiren premium tezgah yüzeyleri.",
-  },
-];
+import { categories } from "@/data/products";
 
 export function CategoryShowcase() {
   return (
@@ -38,6 +12,7 @@ export function CategoryShowcase() {
             <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.45em] text-black/30">
               Ürün Grupları
             </p>
+
             <h2 className="text-3xl font-extralight tracking-tight text-[#0A1A2B] md:text-5xl">
               İhtiyacınıza göre <br className="hidden md:block" />
               doğru ürün alanını seçin.
@@ -51,14 +26,14 @@ export function CategoryShowcase() {
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {productCats.map((cat) => (
+          {categories.map((cat) => (
             <Link
               href={`/urunler/${cat.slug}`}
               key={cat.slug}
               className="group relative aspect-[3/4] overflow-hidden rounded-[2.25rem] bg-[#0A1A2B]"
             >
               <Image
-                src={`${cat.img}?q=80&w=900`}
+                src={cat.image}
                 alt={cat.title}
                 fill
                 className="object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
@@ -72,8 +47,9 @@ export function CategoryShowcase() {
                     <h3 className="text-2xl font-light tracking-tight text-white">
                       {cat.title}
                     </h3>
+
                     <p className="mt-3 max-w-[18rem] text-sm leading-6 text-white/70">
-                      {cat.desc}
+                      {cat.description}
                     </p>
                   </div>
 

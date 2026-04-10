@@ -19,7 +19,63 @@
   }
 }
 
-/* Burada özel class'lar oluşturmak yerine 
-   Sommario tipografisini Tailwind config'e ekleyeceğiz. 
-   Böylece direkt HTML içinde kullanabileceksin.
-*/
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.14;
+  }
+  25% {
+    transform: translateY(-8px) translateX(3px) scale(1.08);
+    opacity: 0.28;
+  }
+  50% {
+    transform: translateY(-14px) translateX(-2px) scale(1);
+    opacity: 0.42;
+  }
+  75% {
+    transform: translateY(-7px) translateX(4px) scale(0.96);
+    opacity: 0.24;
+  }
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.14;
+  }
+}
+
+@keyframes waveDriftSlow {
+  0% {
+    transform: translateX(-4%) translateY(0px);
+  }
+  50% {
+    transform: translateX(4%) translateY(6px);
+  }
+  100% {
+    transform: translateX(-4%) translateY(0px);
+  }
+}
+
+@keyframes waveDriftSlower {
+  0% {
+    transform: translateX(3%) translateY(0px);
+  }
+  50% {
+    transform: translateX(-3%) translateY(-6px);
+  }
+  100% {
+    transform: translateX(3%) translateY(0px);
+  }
+}
+
+.animate-float-particle {
+  animation-name: floatParticle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.animate-wave-slow {
+  animation: waveDriftSlow 10s ease-in-out infinite;
+}
+
+.animate-wave-slower {
+  animation: waveDriftSlower 14s ease-in-out infinite;
+}

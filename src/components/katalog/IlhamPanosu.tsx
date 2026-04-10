@@ -5,6 +5,7 @@ const editorialBloklar = [
     desc: "Işığı büyüten, ferah ve zamansız yaşam alanları için sade yüzey seçimleri.",
     note: "Minimal ve açık plan mekanlar için önerilir.",
     color: "bg-[#F5F5F7] text-[#0A1A2B]",
+    code: "#F5F5F7",
   },
   {
     label: "Derinlik & Karakter",
@@ -12,6 +13,7 @@ const editorialBloklar = [
     desc: "Kontrasti yüksek, daha güçlü bir atmosfer ve belirgin mekan kimliği isteyenler için.",
     note: "Daha dramatik ve rafine iç mekanlar için uygundur.",
     color: "bg-[#0A1A2B] text-white",
+    code: "#0A1A2B",
   },
   {
     label: "Sıcak Yaşam Hissi",
@@ -19,14 +21,15 @@ const editorialBloklar = [
     desc: "Ahşap, taş ve yumuşak tonlarla daha davetkar ve yaşayan alanlar oluşturur.",
     note: "Doğal ışıkla dengeli ve sıcak bir görünüm sunar.",
     color: "bg-[#EAE3DB] text-[#0A1A2B]",
+    code: "#EAE3DB",
   },
 ];
 
 export default function IlhamPanosu() {
   return (
-    <section className="border-t border-black/5 bg-white py-28 md:py-32">
+    <section className="border-t border-black/5 bg-white py-20 md:py-28">
       <div className="container mx-auto px-6">
-        <div className="mb-20 text-center">
+        <div className="mb-14 text-center md:mb-20">
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.45em] text-black/20">
             İlham Alın
           </p>
@@ -36,29 +39,37 @@ export default function IlhamPanosu() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3 md:gap-5">
           {editorialBloklar.map((blok, i) => (
             <div
               key={i}
-              className={`${blok.color} flex aspect-[4/5] flex-col justify-between rounded-[2.5rem] p-10 transition-shadow duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] md:p-12`}
+              className={`${blok.color} flex min-h-[280px] md:min-h-[340px] xl:min-h-[380px] flex-col justify-between rounded-[1.5rem] p-5 transition-shadow duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] md:rounded-[2rem] md:p-7`}
             >
               <div>
-                <span className="mb-8 block text-[10px] font-semibold uppercase tracking-[0.3em] opacity-45">
-                  {blok.label}
-                </span>
+                <div className="mb-5 flex items-start justify-between gap-3 md:mb-7">
+                  <span className="block text-[9px] font-semibold uppercase tracking-[0.24em] opacity-45 md:text-[10px] md:tracking-[0.3em]">
+                    {blok.label}
+                  </span>
 
-                <h3 className="mb-5 text-3xl font-light leading-tight tracking-tight md:text-[2rem]">
+                  <span className="shrink-0 rounded-full border border-current/10 px-2.5 py-1 text-[8px] font-medium uppercase tracking-[0.14em] opacity-60 md:px-3 md:text-[9px]">
+                    {blok.code}
+                  </span>
+                </div>
+
+                <h3 className="mb-3 text-[22px] font-light leading-tight tracking-tight md:mb-4 md:text-[28px]">
                   {blok.baslik}
                 </h3>
 
-                <p className="max-w-sm text-sm leading-7 opacity-70 md:text-[15px]">
+                <p className="max-w-sm text-[12px] leading-5 opacity-70 md:text-[14px] md:leading-6">
                   {blok.desc}
                 </p>
               </div>
 
-              <div className="pt-10">
-                <div className="mb-4 h-px w-12 bg-current opacity-15" />
-                <p className="text-[12px] leading-6 opacity-55">{blok.note}</p>
+              <div className="pt-6 md:pt-8">
+                <div className="mb-3 h-px w-8 bg-current opacity-15 md:mb-4 md:w-10" />
+                <p className="text-[10px] leading-5 opacity-55 md:text-[11px] md:leading-6">
+                  {blok.note}
+                </p>
               </div>
             </div>
           ))}

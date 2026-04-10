@@ -21,7 +21,7 @@ export default function Navbar() {
     { name: "Katalog", href: "/katalog" },
     { name: "Hakkımızda", href: "/hakkimizda" },
     { name: "Hizmetler", href: "/hizmetler" },
-    { name: "Yüzey Seçimi", href: "/yuzeysecimi" },
+    // { name: "Yüzey Seçimi", href: "/yuzeysecimi" },
     { name: "Projeler", href: "/projeler" },
 
 

@@ -1,12 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function KatalogHero() {
   return (
     <section className="relative overflow-hidden bg-white pt-32 pb-20 md:pt-44 md:pb-28">
-      <div className="container mx-auto px-6">
+      <div className="container relative z-10 mx-auto px-6">
         <div className="max-w-5xl">
           <div className="mb-8 flex items-center gap-4">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.55em] text-black/30 whitespace-nowrap">
+            <span className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.55em] text-black/30">
               Seçkin Koleksiyonlar
             </span>
             <div className="h-px w-full bg-black/5" />
@@ -33,21 +34,30 @@ export default function KatalogHero() {
             </a>
 
             <Link
-              href="/yuzey-secimi"
-              className="inline-flex items-center justify-center rounded-full border border-[#0A1A2B]/10 bg-white px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B] transition hover:border-[#0A1A2B]/20 hover:bg-[#F8F8F8]"
+              href="/urunler"
+              className="inline-flex items-center justify-center rounded-full border border-[#0A1A2B]/10 bg-white/80 px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B] transition hover:border-[#0A1A2B]/20 hover:bg-white"
             >
-              Yüzey Seçimine Git
+              Ürünleri İncele
             </Link>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[11px] uppercase tracking-[0.22em] text-black/35">
-            <span>Mutfak Koleksiyonları</span>
-            <span>Banyo Serileri</span>
-            <span>Yüzey Dünyası</span>
-            <span>Dijital Katalog</span>
-          </div>
+          
         </div>
       </div>
+
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[42%] md:block">
+        <div className="absolute inset-0 z-10 bg-gradient-to-l from-white via-white/75 to-transparent" />
+        <Image
+          src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400"
+          alt="Premium interior surface mood"
+          fill
+          priority
+          className="object-cover opacity-[0.16]"
+        />
+      </div>
+
+      <div className="pointer-events-none absolute -top-20 right-[-120px] h-[380px] w-[380px] rounded-full bg-[#0A1A2B]/[0.04] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-120px] left-[-120px] h-[280px] w-[280px] rounded-full bg-black/[0.03] blur-3xl" />
     </section>
   );
 }
