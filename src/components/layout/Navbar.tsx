@@ -21,98 +21,149 @@ export default function Navbar() {
     { name: "Katalog", href: "/katalog" },
     { name: "Hakkımızda", href: "/hakkimizda" },
     { name: "Hizmetler", href: "/hizmetler" },
-    // { name: "Yüzey Seçimi", href: "/yuzeysecimi" },
     { name: "Projeler", href: "/projeler" },
-
-
-
   ];
 
   return (
-    <nav className={`fixed w-full top-0 left-0 z-[999] transition-all duration-500 ${
-      scrolled 
-        ? "bg-white py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.05)]" 
-        : "bg-white lg:bg-transparent py-6"
-    }`}>
-      <div className="max-w-[1700px] mx-auto flex items-center justify-between px-6 lg:px-12">
-        
+    <nav
+      className={`fixed top-0 left-0 z-[999] w-full transition-all duration-500 ${
+        scrolled
+          ? "bg-white py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.05)]"
+          : "bg-white py-6 lg:bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-[1700px] items-center justify-between px-6 lg:px-12">
         <div className="flex-shrink-0">
           <Link href="/" className="block">
-            <Image 
-              src="/assets/logo.png" 
-              alt="Aygün Yapı" 
-              width={160} 
-              height={40} 
-              className="h-8 lg:h-10 w-auto object-contain"
-              priority 
+            <Image
+              src="/assets/logo.png"
+              alt="Aygün Yapı"
+              width={160}
+              height={40}
+              className="h-8 w-auto object-contain lg:h-10"
+              priority
             />
           </Link>
         </div>
 
-        <div className="hidden lg:flex items-center gap-10">
-          {menuItems.map((item) => (
-            <Link 
-              key={item.href} 
-              href={item.href} 
-              className="group relative py-1"
-            >
-              <span className={`text-[11px] uppercase tracking-[0.25em] font-bold transition-colors duration-300 ${
-                pathname === item.href ? "text-black" : "text-black/50 group-hover:text-black"
-              }`}>
-                {item.name}
-              </span>
-              <span className={`absolute -bottom-1 left-0 h-[1.5px] bg-black transition-all duration-500 ease-in-out ${
-                pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
-              }`} />
-            </Link>
-          ))}
+        <div className="hidden items-center gap-10 lg:flex">
+          {menuItems.map((item) => {
+            const isActive = pathname === item.href;
+
+            return (
+              <Link key={item.href} href={item.href} className="group relative py-1">
+                <span
+                  className={`text-[11px] font-bold uppercase tracking-[0.25em] transition-colors duration-300 ${
+                    scrolled
+                      ? isActive
+                        ? "text-black"
+                        : "text-black/50 group-hover:text-black"
+                      : isActive
+                      ? "text-white"
+                      : "text-white/65 group-hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                </span>
+
+                <span
+                  className={`absolute -bottom-1 left-0 h-[1.5px] transition-all duration-500 ease-in-out ${
+                    scrolled
+                      ? `bg-black ${isActive ? "w-full" : "w-0 group-hover:w-full"}`
+                      : `bg-white ${isActive ? "w-full" : "w-0 group-hover:w-full"}`
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="hidden lg:flex items-center">
-  <Link 
-    href="/iletisim" 
-    style={{ 
-      backgroundColor: '#0A1A2B', 
-      color: '#FFFFFF',           
-      border: '1px solid #0A1A2B' 
-    }}
-    className="px-10 py-3.5 text-[10px] font-bold uppercase tracking-[0.2em] rounded-full transition-all duration-500 ease-in-out hover:!bg-white hover:!text-[#0A1A2B] active:scale-95 shadow-sm"
-  >
-    Bize Ulaşın
-  </Link>
-</div>
+        <div className="hidden items-center lg:flex">
+          <Link
+            href="/iletisim"
+            className={`rounded-full px-10 py-3.5 text-[10px] font-bold uppercase tracking-[0.2em] shadow-sm transition-all duration-500 ease-in-out active:scale-95 ${
+              scrolled
+                ? "border border-[#0A1A2B] bg-[#0A1A2B] text-white hover:bg-white hover:text-[#0A1A2B]"
+                : "border border-white/30 bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-[#0A1A2B]"
+            }`}
+          >
+            Bize Ulaşın
+          </Link>
+        </div>
 
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className="lg:hidden p-2 flex flex-col gap-1.5 items-end"
+        {/* Mobile trigger */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="lg:hidden"
+          aria-label={isOpen ? "Menüyü kapat" : "Menüyü aç"}
         >
-          <div className={`h-[1px] bg-black transition-all duration-300 ${isOpen ? "w-7 rotate-45 translate-y-2" : "w-7"}`} />
-          <div className={`h-[1px] bg-black transition-all duration-300 ${isOpen ? "opacity-0" : "w-5"}`} />
-          <div className={`h-[1px] bg-black transition-all duration-300 ${isOpen ? "w-7 -rotate-45 -translate-y-2" : "w-3"}`} />
+          <div
+            className={`flex items-center gap-3 rounded-full px-4 py-2 backdrop-blur-sm transition-all duration-300 ${
+              scrolled
+                ? "border border-black/10 bg-white/90 hover:border-black/20"
+                : "border border-white/20 bg-white/10 hover:border-white/35"
+            }`}
+          >
+            <span
+              className={`text-[10px] font-semibold uppercase tracking-[0.28em] ${
+                scrolled ? "text-[#0A1A2B]" : "text-white"
+              }`}
+            >
+              Menü
+            </span>
+
+            <div className="relative h-5 w-5">
+              <span
+                className={`absolute top-[6px] left-0 h-[1.5px] w-5 transition-all duration-300 ${
+                  scrolled ? "bg-[#0A1A2B]" : "bg-white"
+                } ${isOpen ? "translate-y-[3px] rotate-45" : ""}`}
+              />
+              <span
+                className={`absolute top-[14px] left-0 h-[1.5px] w-5 transition-all duration-300 ${
+                  scrolled ? "bg-[#0A1A2B]" : "bg-white"
+                } ${isOpen ? "-translate-y-[5px] -rotate-45" : ""}`}
+              />
+            </div>
+          </div>
         </button>
       </div>
 
-      <div className={`fixed inset-0 bg-white z-[998] transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
-        isOpen ? "translate-y-0" : "-translate-y-full"
-      }`}>
-        <div className="flex flex-col h-full pt-32 px-10 gap-10">
+      <div
+        className={`fixed inset-0 z-[998] bg-white transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
+          isOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="absolute top-6 right-6">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white"
+            aria-label="Menüyü kapat"
+          >
+            <div className="relative h-5 w-5">
+              <span className="absolute top-1/2 left-0 h-[1.5px] w-5 -translate-y-1/2 rotate-45 bg-black" />
+              <span className="absolute top-1/2 left-0 h-[1.5px] w-5 -translate-y-1/2 -rotate-45 bg-black" />
+            </div>
+          </button>
+        </div>
+
+        <div className="flex h-full flex-col gap-10 px-10 pt-32">
           <div className="space-y-6">
             {menuItems.map((item) => (
-              <Link 
-                key={item.href} 
-                href={item.href} 
+              <Link
+                key={item.href}
+                href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-4xl font-extralight tracking-tight text-black border-b border-black/5 pb-4"
+                className="block border-b border-black/5 pb-4 text-4xl font-extralight tracking-tight text-black"
               >
                 {item.name}
               </Link>
             ))}
           </div>
-          
-          <Link 
+
+          <Link
             href="/iletisim"
             onClick={() => setIsOpen(false)}
-            className="bg-midnight text-white text-center py-5 rounded-full uppercase tracking-[0.2em] text-xs font-bold transition-all active:scale-95"
+            className="rounded-full bg-[#0A1A2B] py-5 text-center text-xs font-bold uppercase tracking-[0.2em] text-white transition-all active:scale-95"
           >
             Bize Ulaşın
           </Link>
