@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="tr">
       <body className="font-sans bg-white text-black">
         <Navbar />
-        <div className="pt-4">{children}</div>
+        <div>{children}</div>
         <Footer />
       </body>
     </html>

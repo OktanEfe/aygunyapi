@@ -14,6 +14,7 @@ export default function ProductsHero() {
           priority
           className="object-cover"
         />
+        
 
         <div className="absolute inset-0 bg-[#0A1A2B]/55" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A2B]/85 via-[#0A1A2B]/60 to-transparent" />

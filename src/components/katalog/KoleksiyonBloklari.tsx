@@ -22,7 +22,7 @@ const koleksiyonlar = [
 
 export default function KoleksiyonBloklari() {
   return (
-    <section id="koleksiyonlar" className="pb-24 md:pb-28">
+    <section id="koleksiyonlar" className="pb-24 md:pb-28 pt-24 mb:pt-28">
       <div className="container mx-auto px-6">
         <div className="mb-12 max-w-2xl">
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.45em] text-black/30">

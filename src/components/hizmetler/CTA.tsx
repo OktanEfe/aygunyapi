@@ -5,7 +5,6 @@ import Link from "next/link";
 export default function ContactCTA() {
   return (
     <section className="relative overflow-hidden bg-white py-24 md:py-36">
-      {/* Ambient background */}
       <div className="pointer-events-none absolute -top-20 right-[-120px] h-[360px] w-[360px] rounded-full bg-[#0A1A2B]/[0.05] blur-3xl" />
       <div className="pointer-events-none absolute bottom-[-120px] left-[-80px] h-[260px] w-[260px] rounded-full bg-black/[0.03] blur-3xl" />
       <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[32%] bg-[#F7F7F8] md:block" />
@@ -13,7 +12,6 @@ export default function ContactCTA() {
       <div className="container relative z-10 mx-auto px-6">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
-            {/* Left content */}
             <div className="text-center lg:text-left">
               <div className="mb-8 flex items-center justify-center gap-4 lg:justify-start">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.5em] text-[#0A1A2B]/35">
@@ -56,7 +54,6 @@ export default function ContactCTA() {
               </div>
             </div>
 
-            {/* Right info panel */}
             <div className="flex flex-col gap-5">
               <div className="rounded-[2rem] border border-[#0A1A2B]/6 bg-white p-8 shadow-[0_30px_60px_-18px_rgba(0,0,0,0.06)] transition-transform duration-500 hover:-translate-y-1 md:p-10">
                 <span className="mb-6 block text-[9px] font-semibold uppercase tracking-[0.32em] text-[#0A1A2B]/25">

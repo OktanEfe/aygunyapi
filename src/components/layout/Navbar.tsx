@@ -29,7 +29,7 @@ export default function Navbar() {
       className={`fixed top-0 left-0 z-[999] w-full transition-all duration-500 ${
         scrolled
           ? "bg-white py-4 shadow-[0_1px_0_0_rgba(0,0,0,0.05)]"
-          : "bg-white py-6 lg:bg-transparent"
+          : "bg-transparent py-6"
       }`}
     >
       <div className="mx-auto flex max-w-[1700px] items-center justify-between px-6 lg:px-12">
@@ -91,7 +91,6 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Mobile trigger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="lg:hidden"

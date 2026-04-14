@@ -54,14 +54,12 @@ export default function AboutHero() {
         </div>
       </div>
 
-      {/* 1998 */}
       <div className="pointer-events-none absolute top-1/2 right-[-4%] z-[1] hidden -translate-y-1/2 select-none md:block">
         <span className="text-[24vw] font-black tracking-tighter text-[#0A1A2B]/[0.05]">
           1998
         </span>
       </div>
 
-      {/* AMBIENT */}
       <div className="pointer-events-none absolute -top-20 right-[-120px] z-[1] h-[380px] w-[380px] rounded-full bg-[#0A1A2B]/[0.05] blur-3xl" />
       <div className="pointer-events-none absolute bottom-[-120px] left-[-120px] z-[1] h-[280px] w-[280px] rounded-full bg-black/[0.04] blur-3xl" />
     </section>

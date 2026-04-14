@@ -4,78 +4,96 @@ import Link from "next/link";
 
 export default function ContactCTA() {
   return (
-    <section className="relative py-24 md:py-40 bg-white overflow-hidden">
-      
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#F5F5F7] skew-x-[-12deg] translate-x-20 hidden md:block" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto">
-          
-          <div className="flex flex-col md:flex-row items-center md:items-stretch gap-12 md:gap-20">
-            
-            <div className="flex-1 text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-4 mb-8">
-                <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-[#0A1A2B]/40">Sıradaki Adım</span>
+    <section className="relative overflow-hidden bg-white py-24 md:py-36">
+      <div className="pointer-events-none absolute -top-20 right-[-120px] h-[360px] w-[360px] rounded-full bg-[#0A1A2B]/[0.05] blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-120px] left-[-80px] h-[260px] w-[260px] rounded-full bg-black/[0.03] blur-3xl" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[32%] bg-[#F7F7F8] md:block" />
+
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
+            <div className="text-center lg:text-left">
+              <div className="mb-8 flex items-center justify-center gap-4 lg:justify-start">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.5em] text-[#0A1A2B]/35">
+                  Sıradaki Adım
+                </span>
                 <div className="h-px w-12 bg-[#0A1A2B]/10" />
               </div>
-              
-              <h2 className="text-5xl md:text-8xl font-extralight tracking-tighter text-[#0A1A2B] leading-[0.9] mb-10">
+
+              <h2 className="text-5xl font-extralight leading-[0.9] tracking-tighter text-[#0A1A2B] md:text-[96px]">
                 Hayalinizdeki Yapıyı <br />
-                <span className="font-serif italic font-normal text-[#0A1A2B]/20">Birlikte Kuralım.</span>
+                <span className="font-serif font-normal italic text-[#0A1A2B]/20">
+                  Birlikte Kuralım.
+                </span>
               </h2>
-              
-              <p className="text-base md:text-lg font-light text-[#0A1A2B]/60 leading-relaxed mb-12 max-w-lg">
-                Projeniz ne kadar büyük veya detaylı olursa olsun, Yalova&apos;nın zanaatkar ruhuyla her adımda yanınızdayız.
+
+              <p className="mx-auto mt-10 max-w-2xl text-base font-light leading-8 text-[#0A1A2B]/55 md:mx-0 md:text-lg">
+                Projeniz ister kapsamlı bir yenileme, ister ince detaylar gerektiren
+                özel bir yaşam alanı olsun; malzeme seçiminden uygulama sürecine kadar
+                her aşamada rafine, kontrollü ve güven veren bir yol haritası sunuyoruz.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center gap-6">
-                <Link 
-                  href="/iletisim" 
-                  className="group relative px-10 py-5 bg-[#0A1A2B] text-white rounded-full overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(10,26,43,0.2)] active:scale-95"
+              <div className="mt-12 flex flex-col items-center gap-5 sm:flex-row sm:flex-wrap lg:items-start">
+                <Link
+                  href="/iletisim"
+                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#0A1A2B] px-9 py-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-white transition-all duration-500 hover:shadow-[0_20px_40px_rgba(10,26,43,0.18)] active:scale-95"
                 >
-                  <span className="relative z-10 text-[11px] font-bold uppercase tracking-[0.2em]">Hemen Teklif Alın</span>
-                  <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  <span className="relative z-10">Hemen Teklif Alın</span>
+                  <div className="absolute inset-0 translate-y-full bg-white/10 transition-transform duration-500 group-hover:translate-y-0" />
                 </Link>
-                
-                <Link 
-                  href="tel:+905000000000" 
-                  className="group flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A1A2B]/40 hover:text-[#0A1A2B] transition-colors"
+
+                <Link
+                  href="tel:+905000000000"
+                  className="group inline-flex items-center gap-4 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A1A2B]/55 transition-colors hover:text-[#0A1A2B]"
                 >
-                  Bizi Arayın
-                  <div className="w-10 h-10 rounded-full border border-[#0A1A2B]/5 flex items-center justify-center group-hover:bg-[#0A1A2B]/5 transition-all">
-                    <i className="bi bi-telephone text-sm"></i>
+                  <span>Bizi Arayın</span>
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#0A1A2B]/10 bg-white transition-all duration-300 group-hover:border-[#0A1A2B]/20 group-hover:bg-[#0A1A2B]/5">
+                    <i className="bi bi-telephone text-sm" />
                   </div>
                 </Link>
               </div>
             </div>
 
-            <div className="w-full md:w-[380px] flex flex-col gap-4">
-              <div className="p-8 md:p-10 bg-white rounded-[2.5rem] border border-[#0A1A2B]/5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.05)] hover:-translate-y-2 transition-transform duration-500">
-                <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-[#0A1A2B]/20 mb-6 block">Ofisimiz</span>
-                <h3 className="text-xl font-light text-[#0A1A2B] mb-2">Merkez Atölye</h3>
-                <p className="text-sm text-[#0A1A2B]/50 font-light leading-relaxed">
+            <div className="flex flex-col gap-5">
+              <div className="rounded-[2rem] border border-[#0A1A2B]/6 bg-white p-8 shadow-[0_30px_60px_-18px_rgba(0,0,0,0.06)] transition-transform duration-500 hover:-translate-y-1 md:p-10">
+                <span className="mb-6 block text-[9px] font-semibold uppercase tracking-[0.32em] text-[#0A1A2B]/25">
+                  Ofis & Uygulama
+                </span>
+
+                <h3 className="mb-3 text-2xl font-light tracking-tight text-[#0A1A2B]">
+                  Merkez Atölye
+                </h3>
+
+                <p className="text-sm font-light leading-7 text-[#0A1A2B]/50">
                   İzmit, Kocaeli / Türkiye <br />
-                  Yalova Tasarım Ofisi
+                  Yalova ve çevresi proje & uygulama desteği
                 </p>
               </div>
 
-              <div className="p-8 md:p-10 bg-[#0A1A2B] rounded-[2.5rem] text-white shadow-2xl hover:-translate-y-2 transition-transform duration-500">
-                <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-white/30 mb-6 block">E-Posta</span>
-                <h3 className="text-xl font-light mb-2">info@aygunyapi.com</h3>
-                <p className="text-sm text-white/40 font-light">
-                  7/24 Proje Talebi Gönderebilirsiniz.
+              <div className="rounded-[2rem] bg-[#0A1A2B] p-8 text-white shadow-[0_30px_60px_-18px_rgba(10,26,43,0.28)] transition-transform duration-500 hover:-translate-y-1 md:p-10">
+                <span className="mb-6 block text-[9px] font-semibold uppercase tracking-[0.32em] text-white/30">
+                  E-Posta
+                </span>
+
+                <h3 className="mb-3 break-words text-2xl font-light tracking-tight text-white">
+                  info@aygunyapi.com
+                </h3>
+
+                <p className="text-sm font-light leading-7 text-white/45">
+                  Proje talebinizi dilediğiniz zaman iletebilir, detaylı dönüş için
+                  bizimle doğrudan iletişime geçebilirsiniz.
                 </p>
               </div>
+
+             
             </div>
-
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full flex justify-center opacity-10">
-        <div className="w-px h-24 bg-gradient-to-t from-[#0A1A2B] to-transparent" />
+      <div className="absolute bottom-0 left-0 flex w-full justify-center opacity-10">
+        <div className="h-24 w-px bg-gradient-to-t from-[#0A1A2B] to-transparent" />
       </div>
-
     </section>
   );
 }

@@ -2,7 +2,7 @@ import AboutHero from "@/components/hakkımızda/Hero";
 import AboutValues from "@/components/hakkımızda/Values";
 import AboutStory from "@/components/hakkımızda/TheStory";
 import AboutQuote from "@/components/hakkımızda/HumanTouch";
-import ContactCTA from "@/components/anasayfa/CTA"; 
+import ServicesCTA from "@/components/hizmetler/CTA"
 
 export default function Hakkimizda() {
   return (
@@ -11,7 +11,7 @@ export default function Hakkimizda() {
       <AboutValues />
       <AboutStory />
       <AboutQuote />
-      <ContactCTA />
+      <ServicesCTA />
     </main>
   );
 }

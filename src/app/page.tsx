@@ -1,21 +1,18 @@
 import Hero from "@/components/anasayfa/Hero";
 import Banner from "@/components/anasayfa/Banner";
-import  Project from "@/components/anasayfa/Projects"
+import Project from "@/components/anasayfa/Projects";
 import "@/styles/button.css";
- import Gallery from "@/components/anasayfa/Gallery";
- import Video from "@/components/anasayfa/CTA"
+import Gallery from "@/components/anasayfa/Gallery";
+import Video from "@/components/anasayfa/CTA";
 
 export default function Home() {
   return (
-    <main className="pt-[70px] space-y-20"> 
-
+    <main>
       <Hero />
       <Banner />
       <Project />
-     <Gallery />
-    
-      <Video /> 
-
+      <Gallery />
+      <Video />
     </main>
   );
 }

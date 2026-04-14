@@ -16,7 +16,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesGrid />
       <SignatureService />
-      <ProcessStrip />
+      {/* <ProcessStrip /> */}
 
      
 
