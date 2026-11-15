@@ -1,22 +1,69 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
-import PageHeader from "@/components/layout/PageHeader";
-import { categories } from "@/data/products";
 
 export default function ProductsHero() {
   return (
-    <PageHeader title="Ürünler" image="/assets/photos/mutfak-mermer/2.jpg" imageAlt="Mermer desenli mutfak tezgâhı ve alın">
-      <ul className="flex flex-wrap gap-3">
-        {categories.map((c) => (
-          <li key={c.slug}>
-            <Link
-              href={`/urunler/${c.slug}`}
-              className="inline-flex rounded-full border border-white/25 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/85 transition-colors hover:border-white hover:bg-white hover:text-midnight"
+    <section className="relative isolate overflow-hidden pt-40 pb-20 md:pt-52 md:pb-28 min-h-[78vh] md:min-h-[88vh]">
+      <div className="absolute inset-0 ">
+        <Image
+          src="/assets/photos/mutfak-mermer/4.jpg"
+          alt="Mutfak uygulaması"
+          fill
+          priority
+          className="object-cover"
+        />
+        
+
+        <div className="absolute inset-0 bg-[#0A1A2B]/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A1A2B]/85 via-[#0A1A2B]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="max-w-5xl">
+          <div className="mb-8 flex items-center gap-4">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.45em] text-white/60">
+              Koleksiyonlar
+            </span>
+            <div className="h-px w-12 bg-white/20" />
+          </div>
+
+          <h1 className="max-w-4xl text-5xl font-extralight leading-[0.92] tracking-tighter text-white md:text-[96px]">
+            Yüzeylerin <br />
+            <span className="font-serif italic font-normal text-white/40">
+              Sessiz Estetiği.
+            </span>
+          </h1>
+
+          <p className="mt-10 max-w-2xl text-lg leading-8 text-white/70 md:text-xl">
+            Mutfak tezgahlarından özel üretim kapaklara, yaşam alanının karakterini
+            belirleyen seçili yüzeyleri ve malzeme çözümlerini keşfedin.
+          </p>
+
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#urun-kategorileri"
+              className="inline-flex items-center justify-center rounded-full bg-white px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B] transition hover:opacity-90"
             >
-              {c.title}
+              Koleksiyonları Keşfet
+            </a>
+
+            <Link
+              href="/iletisim"
+              className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur transition hover:bg-white hover:text-[#0A1A2B]"
+            >
+              Uzmanla Görüş
             </Link>
-          </li>
-        ))}
-      </ul>
-    </PageHeader>
+          </div>
+
+          
+        </div>
+      </div>
+
+      <div className="pointer-events-none absolute -top-20 right-[-120px] z-[1] h-[360px] w-[360px] rounded-full bg-white/5 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-120px] left-[-120px] z-[1] h-[280px] w-[280px] rounded-full bg-black/20 blur-3xl" />
+    </section>
   );
 }

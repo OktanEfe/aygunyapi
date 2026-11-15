@@ -1,0 +1,31 @@
+footer {
+    background-color: var(--midnight);
+    color: #fff;
+    font-size: 0.95rem;
+  }
+  
+  .footer-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  footer h6,
+  footer h5 {
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  footer hr {
+    opacity: 0.25;
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  footer .small {
+    opacity: 0.75;
+  }

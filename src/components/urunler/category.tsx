@@ -1,49 +1,65 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { categories } from "@/data/products";
 
-export function CategoryShowcase({ heading = true }: { heading?: boolean }) {
+export function CategoryShowcase() {
   return (
-    <section id="urun-kategorileri" className="bg-white py-24 md:py-36">
-      <div className="container-x">
-        {heading && (
-          <div className="mb-14 flex flex-col gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="text-[34px] font-extralight leading-[1.05] tracking-[-0.03em] text-midnight md:text-[60px]">
-                Ürünler
-              </h2>
-            </div>
-            <Link href="/urunler" className="btn-ghost self-start md:self-auto">
-              Tüm Ürünler
-              <i className="bi bi-arrow-right text-sm" />
-            </Link>
-          </div>
-        )}
+    <section id="urun-kategorileri" className="bg-white py-24 md:py-28">
+      <div className="container mx-auto px-6">
+        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.45em] text-black/30">
+              Ürün Grupları
+            </p>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {categories.map((cat, i) => (
-            <Link key={cat.slug} href={`/urunler/${cat.slug}`} className="group block">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-sand">
-                <Image
-                  src={cat.image}
-                  alt={cat.title}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                />
-                <span className="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1 text-[10px] font-semibold tracking-[0.2em] text-midnight backdrop-blur">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-              <div className="flex items-start justify-between gap-4 pt-6">
-                <div>
-                  <h3 className="text-[22px] font-light tracking-tight text-midnight transition-colors group-hover:text-bordo">
-                    {cat.title}
-                  </h3>
-                  <p className="mt-2 text-[14px] font-light leading-[1.7] text-midnight/60">{cat.description}</p>
+            <h2 className="text-3xl font-extralight tracking-tight text-[#0A1A2B] md:text-5xl">
+              İhtiyacınıza göre <br className="hidden md:block" />
+              doğru ürün alanını seçin.
+            </h2>
+          </div>
+
+          <p className="max-w-xl text-sm leading-7 text-black/45 md:text-base">
+            Her kategori; kullanım alanı, yüzey karakteri ve uygulama ihtiyacına göre
+            kurgulandı. Önce alanı seçin, ardından detaylara inin.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {categories.map((cat) => (
+            <Link
+              href={`/urunler/${cat.slug}`}
+              key={cat.slug}
+              className="group relative aspect-[3/4] overflow-hidden rounded-[2.25rem] bg-[#0A1A2B]"
+            >
+              <Image
+                src={cat.image}
+                alt={cat.title}
+                fill
+                className="object-cover opacity-80 transition duration-700 group-hover:scale-105 group-hover:opacity-90"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07121f]/80 via-[#07121f]/15 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 p-8">
+                <div className="mb-5 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-2xl font-light tracking-tight text-white">
+                      {cat.title}
+                    </h3>
+
+                    <p className="mt-3 max-w-[18rem] text-sm leading-6 text-white/70">
+                      {cat.description}
+                    </p>
+                  </div>
+
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition group-hover:border-white group-hover:bg-white group-hover:text-[#0A1A2B]">
+                    <ArrowUpRight size={16} />
+                  </div>
                 </div>
-                <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-midnight/15 text-midnight transition-colors group-hover:border-bordo group-hover:bg-bordo group-hover:text-white">
-                  <i className="bi bi-arrow-up-right text-sm" />
+
+                <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/65">
+                  Koleksiyonu İncele
                 </span>
               </div>
             </Link>

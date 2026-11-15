@@ -20,8 +20,6 @@ export type Category = {
   title: string;
   description: string;
   image: string;
-  /** Kategori sayfasında gösterilen uygulama fotoğrafları */
-  gallery: string[];
   groups: ProductGroup[];
 };
 
@@ -31,7 +29,6 @@ export const categories: Category[] = [
     title: "Mutfak Sistemleri",
     description: "Mutfağın her detayını tamamlayan ürün ve çözümleri keşfedin.",
     image: "/assets/photos/mutfak-mermer/2.jpg",
-    gallery: ["mutfak-mermer/1.jpg","mutfak-mermer/3.jpg","mutfak-yesil/1.jpg","mutfak-klasik/3.jpg","mutfak-ahsap/1.jpg","mutfak-mermer/6.jpg","mutfak-yesil/2.jpg","mutfak-klasik/1.jpg"].map((f) => `/assets/photos/${f}`),
     groups: [
       {
         slug: "kapaklar",
@@ -168,7 +165,6 @@ export const categories: Category[] = [
     title: "Banyo Serileri",
     description: "Islak hacimler için estetik, işlevsel ve dayanıklı ürün çözümlerini keşfedin.",
     image: "/assets/photos/banyo/2.jpg",
-    gallery: ["banyo/1.jpg","banyo/4.jpg","banyo/3.jpg"].map((f) => `/assets/photos/${f}`),
     groups: [
       {
         slug: "banyo-dolaplari",
@@ -313,7 +309,6 @@ export const categories: Category[] = [
     description:
       "Mekânın karakterini tamamlayan, farklı yüzey ve tasarım seçenekleriyle şekillenen kapı çözümlerini keşfedin.",
     image: "/assets/photos/dolap/3.jpg",
-    gallery: [],
     groups: [
       {
         slug: "lake-kapilar",
@@ -334,7 +329,6 @@ export const categories: Category[] = [
     title: "Mobilya & Özel Üretim",
     description: "Mekâna, ölçüye ve kullanım ihtiyacına göre tasarlanan özel mobilya çözümlerini keşfedin.",
     image: "/assets/photos/tv-unitesi/2.jpg",
-    gallery: ["tv-unitesi/1.jpg","giyinme/1.jpg","kitaplik/2.jpg","dresuar/2.jpg","vitrin/2.jpg","ofis/1.jpg","dolap/1.jpg","salon/3.jpg"].map((f) => `/assets/photos/${f}`),
     groups: [
       {
         slug: "mobilya",

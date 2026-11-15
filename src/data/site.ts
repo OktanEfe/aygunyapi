@@ -4,7 +4,7 @@ export const site = {
   phoneDisplay: "+90 532 325 36 69",
   phoneHref: "tel:+905323253669",
   whatsapp: "905323253669", // TODO: WhatsApp farklı numaradaysa güncelle
-  email: "info@aygundecor.com",
+  email: "aygunyapi@hotmail.com",
   instagram: "https://www.instagram.com/aygundekor/",
   addressLines: ["Süleyman Bey Mahallesi Mimar Sinan Caddesi No:26/A", "Merkez, Yalova / Türkiye"],
   mapsQuery: "Süleyman Bey Mahallesi Mimar Sinan Caddesi No:26/A Merkez Yalova",

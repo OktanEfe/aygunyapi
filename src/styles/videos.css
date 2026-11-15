@@ -1,0 +1,185 @@
+.video-section {
+    position: relative;
+  }
+  
+  .video-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .video-track {
+    position: relative;
+    width: 80%;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .video-card {
+    position: absolute;
+    width: 45%;
+    height: 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .45s ease;
+    box-shadow: 0 10px 40px rgba(0,0,0,.2);
+  }
+  
+  .video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .video-card h4 {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    color: #fff;
+    font-size: 1.2rem;
+    text-shadow: 0 0 8px #000;
+  }
+  
+  /* Positioning */
+  .pos-0 { transform: scale(1) translateX(0); z-index: 3; }
+  .pos-1 { transform: scale(.75) translateX(220px); opacity: .4; z-index: 1; }
+  .pos-2 { transform: scale(.75) translateX(-220px); opacity: .4; z-index: 1; }
+  
+  /* Arrows */
+  /* Arrows – düzeltildi */
+.video-arrow {
+    background: #0a1a2bdd;
+    color: white;
+    border: none;
+    font-size: 1.8rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* ← tam dikey hizalama */
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .25s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+  
+  /* Hover efekti */
+  .video-arrow:hover {
+    background: #0a1a2b;
+    transform: translateY(-50%) scale(1.15);
+  }
+  
+  /* Sol ok */
+  .video-arrow.left {
+    left: 2%; /* daha iyi konum */
+  }
+  
+  /* Sağ ok */
+  .video-arrow.right {
+    right: 2%;
+  }
+  
+  /* Mobil uyum */
+  @media (max-width: 768px) {
+    .video-arrow {
+      width: 42px;
+      height: 42px;
+      font-size: 1.4rem;
+    }
+  
+    .video-arrow.left {
+      left: 4%;
+    }
+    .video-arrow.right {
+      right: 4%;
+    }
+  }
+  /* Dots */
+  .video-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #aaa;
+    border-radius: 6px;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    width: 28px;
+    background: var(--midnight);
+  }
+  
+  /* Popup */
+  .video-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+  }
+  
+  .video-popup video {
+    width: 80%;
+    max-width: 900px;
+    border-radius: 12px;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 3rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  .video-title {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .3s, transform .3s;
+    pointer-events: none;
+  }
+  
+  .video-card.active .video-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Varsayılan: tüm başlıklar gizli */
+.video-card h4 {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  /* Sadece ortadaki kartın başlığı görünsün */
+  .video-card.pos-0 h4 {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  /* Sağ ve sol kartlarda gizli olsun */
+  .video-card.pos-1 h4,
+  .video-card.pos-2 h4 {
+    opacity: 0;
+    transform: translateY(10px);
+  }
