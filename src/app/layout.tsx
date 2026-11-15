@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: "Aygün Yapı",
-  description: "Güven, Kalite, Estetik — Aygün Yapı",
+  description: "Yalova’da yaşam alanları için tasarlıyor, üretiyor ve uyguluyoruz.",
 };
 
 export default function RootLayout({
@@ -15,9 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="tr">
-      <body className="font-sans bg-white text-black">
+      <body className="bg-white font-sans text-midnight">
         <Navbar />
-        <div>{children}</div>
+        {children}
         <Footer />
       </body>
     </html>

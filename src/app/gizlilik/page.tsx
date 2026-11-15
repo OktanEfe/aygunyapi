@@ -67,7 +67,7 @@ export default function GizlilikPage() {
             <p>
               KVKK&apos;nın 11. maddesi uyarınca verilerinize erişme, düzeltilmesini veya
               silinmesini isteme haklarına sahipsiniz. Talepleriniz için{" "}
-              <a href={`mailto:${site.email}`} className="text-[#0A1A2B] underline underline-offset-4">
+              <a href={`mailto:${site.email}`} className="text-midnight underline underline-offset-4">
                 {site.email}
               </a>{" "}
               adresine yazabilirsiniz.

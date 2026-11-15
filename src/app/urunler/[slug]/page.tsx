@@ -1,148 +1,142 @@
+import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categories, products } from "@/data/products";
+import PageHeader from "@/components/layout/PageHeader";
+import ContactCTA from "@/components/anasayfa/CTA";
+import { categories, getCategory } from "@/data/products";
 
-type PageProps = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+type PageProps = { params: Promise<{ slug: string }> };
+
+export function generateStaticParams() {
+  return categories.map((c) => ({ slug: c.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const category = getCategory(slug);
+  if (!category) return {};
+  return { title: `${category.title} | Aygün Yapı`, description: category.description };
+}
 
 export default async function CategoryPage({ params }: PageProps) {
   const { slug } = await params;
+  const category = getCategory(slug);
+  if (!category) notFound();
 
-  const category = categories.find((item) => item.slug === slug);
-  const categoryProducts = products.filter((item) => item.categorySlug === slug);
-
-  if (!category) {
-    notFound();
-  }
+  const showNav = category.groups.length > 1;
 
   return (
-    <main className="min-h-screen bg-white">
-      <section className="bg-white pt-32 pb-12 md:pt-36 md:pb-16">
-        <div className="container mx-auto px-6">
-          <div className="mb-6 flex flex-wrap items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.28em] text-black/30">
-            <Link href="/urunler" className="transition hover:text-[#0A1A2B]">
-              Ürünler
-            </Link>
-            <span>/</span>
-            <span className="text-[#0A1A2B]">{category.title}</span>
-          </div>
+    <main>
+      <PageHeader
+        eyebrow="Ürünler"
+        eyebrowHref="/urunler"
+        title={category.title}
+        text={category.description}
+        image={category.image}
+        imageAlt={category.title}
+      />
 
-          <div className="max-w-3xl">
-            <div className="mb-5 flex items-center gap-3">
-             
-            </div>
-
-            <h1 className="text-4xl font-extralight tracking-tight text-[#0A1A2B] md:text-6xl">
-              {category.title}
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-base font-light leading-8 text-black/45 md:text-lg">
-              {category.description}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F9F9F9] py-16 md:py-20">
-        <div className="container mx-auto px-6">
-          <div className="mb-10 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.4em] text-black/30">
-                Tüm Ürünler
-              </p>
-              <h2 className="text-2xl font-extralight tracking-tight text-[#0A1A2B] md:text-4xl">
-                Kategoriye ait tüm ürünler
-              </h2>
-            </div>
-
-            <Link
-              href="/urunler"
-              className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B]/60 transition hover:text-[#0A1A2B]"
-            >
-              Tüm kategorilere dön
-            </Link>
-          </div>
-
-          {categoryProducts.length === 0 && (
-            <div className="rounded-[1.5rem] border border-dashed border-black/10 bg-white px-8 py-16 text-center">
-              <p className="text-lg font-light text-[#0A1A2B]">
-                Bu kategorideki ürünler yakında eklenecek.
-              </p>
-              <p className="mt-3 text-sm text-black/45">
-                Şimdilik size özel seçenekler için bizimle iletişime geçebilirsiniz.
-              </p>
-            </div>
-          )}
-
-          <div className="grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
-            {categoryProducts.map((product) => (
-              <Link
-                key={product.slug}
-                href={`/urunler/${slug}/${product.slug}`}
-                className="group block"
+      {showNav && (
+        <div className="sticky top-[72px] z-20 border-b border-midnight/10 bg-white/95 backdrop-blur md:top-[80px]">
+          <nav className="container-x flex gap-2 overflow-x-auto py-4 [scrollbar-width:none]" aria-label="Ürün grupları">
+            {category.groups.map((g) => (
+              <a
+                key={g.slug}
+                href={`#${g.slug}`}
+                className="shrink-0 rounded-full border border-midnight/15 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-midnight/70 transition-colors hover:border-bordo hover:bg-bordo hover:text-white"
               >
-                <div className="relative mb-4 aspect-[4/4.5] overflow-hidden rounded-[1.5rem] bg-white">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
-                  />
-                </div>
-
-                <div className="px-1">
-                  <h3 className="text-lg font-light tracking-tight text-[#0A1A2B] md:text-xl">
-                    {product.name}
-                  </h3>
-
-                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-black/25">
-                    {product.subtitle}
-                  </p>
-
-                  <span className="mt-4 inline-block text-[10px] font-semibold uppercase tracking-[0.22em] text-[#0A1A2B]/50 transition group-hover:text-[#0A1A2B]">
-                    İncele
-                  </span>
-                </div>
-              </Link>
+                {g.title}
+              </a>
             ))}
-          </div>
+          </nav>
         </div>
-      </section>
+      )}
 
-      <section className="border-t border-black/5 bg-white py-20 md:py-24">
-        <div className="container mx-auto px-6 text-center">
-          <h3 className="text-3xl font-extralight tracking-tight text-[#0A1A2B] md:text-5xl">
-            Doğru yüzeyi <br />
-            <span className="font-serif italic text-black/20">
-              birlikte belirleyelim.
-            </span>
-          </h3>
+      {category.groups.map((group, gi) => (
+        <section
+          key={group.slug}
+          id={group.slug}
+          className={`scroll-mt-40 py-20 md:py-28 ${gi % 2 === 0 ? "bg-white" : "bg-sand"}`}
+        >
+          <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-10">
+            {(group.title || group.intro || group.tags) && (
+              <header className="lg:col-span-4">
+                <div className="lg:sticky lg:top-44">
+                  {showNav && (
+                    <span className="text-[11px] font-semibold tracking-[0.24em] text-bordo">
+                      {String(gi + 1).padStart(2, "0")}
+                    </span>
+                  )}
+                  {group.title && (
+                    <h2 className="mt-3 text-[32px] font-extralight leading-[1.1] tracking-[-0.02em] text-midnight md:text-[44px]">
+                      {group.title}
+                    </h2>
+                  )}
+                  {group.intro && (
+                    <p className="mt-5 text-[16px] font-light leading-[1.8] text-midnight/65">{group.intro}</p>
+                  )}
+                  {group.tags && (
+                    <ul className="mt-6 flex flex-wrap gap-2">
+                      {group.tags.map((t) => (
+                        <li
+                          key={t}
+                          className="rounded-full bg-bordo-50 px-3 py-1 text-[11px] font-medium text-bordo"
+                        >
+                          {t}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </header>
+            )}
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-black/45">
-            Projenize uygun ürün seçimi için yüzey, ton ve kullanım senaryosunu birlikte değerlendirelim.
-          </p>
-
-          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
-              href="/iletisim#proje-formu"
-              className="rounded-full bg-[#0A1A2B] px-10 py-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-white transition hover:opacity-90"
+            <div
+              className={`grid gap-px self-start overflow-hidden rounded-2xl border border-midnight/10 bg-midnight/10 sm:grid-cols-2 ${
+                group.title || group.intro || group.tags ? "lg:col-span-8" : "lg:col-span-12 lg:grid-cols-3"
+              }`}
             >
-              Ücretsiz Danışmanlık Alın
-            </Link>
-
-            <Link
-              href="/iletisim"
-              className="inline-flex items-center justify-center rounded-full border border-black/10 px-10 py-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B] transition hover:bg-[#F7F7F8]"
-            >
-              İletişime Geçin
-            </Link>
+              {group.items.map((item) => (
+                <article key={item.name} className={`flex flex-col p-7 md:p-9 sm:[&:last-child:nth-child(odd)]:col-span-2 ${gi % 2 === 0 ? "bg-white" : "bg-sand"}`}>
+                  <h3 className="text-[20px] font-normal tracking-tight text-midnight md:text-[22px]">{item.name}</h3>
+                  {item.desc && (
+                    <p className="mt-4 text-[15px] font-light leading-[1.8] text-midnight/65">{item.desc}</p>
+                  )}
+                  {item.bullets && (
+                    <ul className="mt-5 space-y-2.5">
+                      {item.bullets.map((b) => (
+                        <li key={b} className="flex gap-3 text-[14px] font-light text-midnight/75">
+                          <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-bordo" />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
+
+      {category.gallery.length > 0 && (
+        <section className="bg-midnight py-20 md:py-28">
+          <div className="container-x">
+            <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] md:gap-6">
+              {category.gallery.map((src) => (
+                <div
+                  key={src}
+                  className="relative aspect-[4/5] w-[72%] shrink-0 snap-start overflow-hidden rounded-2xl sm:w-[42%] lg:w-[calc((100%-4.5rem)/4)]"
+                >
+                  <Image src={src} alt={category.title} fill sizes="(min-width: 1024px) 25vw, 70vw" className="object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <ContactCTA />
     </main>
   );
 }

@@ -1,18 +1,17 @@
 import Hero from "@/components/anasayfa/Hero";
 import Banner from "@/components/anasayfa/Banner";
-import Project from "@/components/anasayfa/Projects";
-import "@/styles/button.css";
+import { CategoryShowcase } from "@/components/urunler/category";
 import Gallery from "@/components/anasayfa/Gallery";
-import Video from "@/components/anasayfa/CTA";
+import ContactCTA from "@/components/anasayfa/CTA";
 
 export default function Home() {
   return (
     <main>
       <Hero />
       <Banner />
-      <Project />
+      <CategoryShowcase />
       <Gallery />
-      <Video />
+      <ContactCTA />
     </main>
   );
 }

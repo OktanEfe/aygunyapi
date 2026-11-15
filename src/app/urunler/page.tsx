@@ -1,97 +1,52 @@
-import { CategoryShowcase } from "@/components/urunler/category";
-import { ProductAdvisory } from "@/components/urunler/CTA";
+import type { Metadata } from "next";
 import ProductsHero from "@/components/urunler/hero";
-import FeaturedProductsGrid from "@/components/urunler/grid";
-import { Compass, MapPin, Layers } from "lucide-react";
+import { CategoryShowcase } from "@/components/urunler/category";
+import ContactCTA from "@/components/anasayfa/CTA";
+
+export const metadata: Metadata = {
+  title: "Ürünler | Aygün Yapı",
+  description: "Mutfak sistemleri, banyo serileri, kapılar ve özel üretim mobilya çözümleri.",
+};
+
+const approach = [
+  {
+    label: "Doğru Malzeme",
+    title: "Projeye Uygun Seçimler",
+    desc: "Renk, doku, kullanım ve mekân koşullarını birlikte değerlendirerek projeye uygun malzeme alternatifleri sunuyoruz.",
+  },
+  {
+    label: "Yerel Deneyim",
+    title: "Yalova’da Yakın Hizmet",
+    desc: "Bölgeye hâkimiyetimizle projelere daha hızlı ve doğrudan destek sağlıyoruz.",
+  },
+  {
+    label: "Uygulama Odaklı",
+    title: "Sadece Seçim Değil, Doğru Uygulama",
+    desc: "Ürünleri yalnızca görsel açıdan değil, uygulama koşulları, kullanım ihtiyaçları ve uzun süreli performans açısından da değerlendiriyoruz.",
+  },
+];
 
 export default function ProductsPage() {
-  const yaklasimKartlari = [
-    {
-      label: "Seçim Desteği",
-      title: "Projeye uygun yüzey eşleşmesi",
-      desc: "Mekanın ışığına, kullanım yoğunluğuna ve genel tasarım diline uygun malzeme seçiminde yönlendirme sağlıyoruz.",
-      icon: <Compass size={18} strokeWidth={1.5} />,
-      index: "01",
-    },
-    {
-      label: "Lokal Güç",
-      title: "Yalova odaklı hızlı süreç yönetimi",
-      desc: "Yalova ve çevresindeki projelerde daha kontrollü keşif, daha hızlı yönlendirme ve daha yakın iletişim avantajı sunuyoruz.",
-      icon: <MapPin size={18} strokeWidth={1.5} />,
-      index: "02",
-    },
-    {
-      label: "Uygulama Odaklı",
-      title: "Sadece seçim değil, doğru uygulama",
-      desc: "Ürün önerisini yalnızca görsellik üzerinden değil, uygulama kalitesi ve uzun ömürlü kullanım açısından da değerlendiriyoruz.",
-      icon: <Layers size={18} strokeWidth={1.5} />,
-      index: "03",
-    },
-  ];
-
   return (
-    <main className="min-h-screen bg-white">
+    <main>
       <ProductsHero />
-      <CategoryShowcase />
-      <FeaturedProductsGrid />
+      <CategoryShowcase heading={false} />
 
-      <section className="bg-white py-32 md:py-40">
-        <div className="container mx-auto px-6">
-          <div className="mb-20 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-            <div className="max-w-2xl">
-              <div className="mb-6 flex items-center gap-3">
-                <div className="h-[1px] w-8 bg-[#0A1A2B]/20" />
-                <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#0A1A2B]/40">
-                  Ürün Seçim Yaklaşımı
-                </p>
-              </div>
-              <h2 className="text-4xl font-extralight tracking-tight text-[#0A1A2B] md:text-6xl">
-                Sadece ürün değil, <br />
-                <span className="font-serif italic text-black/20 text-5xl md:text-7xl">
-                  doğru seçim sunuyoruz.
-                </span>
-              </h2>
+      <section className="bg-sand py-20 md:py-28">
+        <div className="container-x grid gap-px overflow-hidden rounded-2xl border border-midnight/10 bg-midnight/10 md:grid-cols-3">
+          {approach.map((a, i) => (
+            <div key={a.label} className="bg-sand p-8 md:p-10">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-bordo">
+                0{i + 1} · {a.label}
+              </span>
+              <h3 className="mt-6 text-[24px] font-light leading-snug tracking-tight text-midnight">{a.title}</h3>
+              <p className="mt-4 text-[15px] font-light leading-[1.8] text-midnight/65">{a.desc}</p>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
-            {yaklasimKartlari.map((item, idx) => (
-              <div
-                key={idx}
-                className="group relative flex flex-col justify-between rounded-[2.5rem] border border-[#0A1A2B]/10 bg-[#FBFBFC] p-10 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(10,26,43,0.06)] md:p-12"
-              >
-                <div>
-                  <div className="mb-12 flex items-center justify-between">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0A1A2B]/5 text-[#0A1A2B]">
-                      {item.icon}
-                    </div>
-
-                    <span className="font-serif text-3xl italic text-[#0A1A2B]/10">
-                      {item.index}
-                    </span>
-                  </div>
-
-                  <span className="mb-4 block text-[10px] font-bold uppercase tracking-[0.3em] text-[#0A1A2B]/40">
-                    {item.label}
-                  </span>
-
-                  <h3 className="mb-6 text-2xl font-light leading-snug tracking-tight text-[#0A1A2B] md:text-3xl">
-                    {item.title}
-                  </h3>
-                </div>
-
-                <div>
-                  <p className="text-[15px] leading-relaxed text-black/50">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          ))}
         </div>
       </section>
 
-      <ProductAdvisory />
+      <ContactCTA />
     </main>
   );
 }
