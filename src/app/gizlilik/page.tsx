@@ -3,7 +3,7 @@ import LegalPage from "@/components/layout/LegalPage";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Gizlilik Politikası | Aygün Yapı",
+  title: "Gizlilik Politikası",
   description: "Aygün Yapı kişisel verilerin korunması ve gizlilik politikası.",
 };
 

@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { site, mapsEmbed } from "@/data/site";
+import ContactForm from "@/components/iletisim/ContactForm";
 
 function scrollToForm(e: React.MouseEvent<HTMLAnchorElement>) {
   e.preventDefault();
@@ -89,53 +90,7 @@ export default function IletisimPage() {
                 </p>
               </div>
 
-              <form
-                action="https://formspree.io/f/mzzbnbyv"
-                method="POST"
-                className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7"
-              >
-                <div className="flex flex-col gap-2">
-                  <label className="ml-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B]/35">Ad Soyad</label>
-                  <input type="text" name="name" required
-                    className="rounded-2xl border border-black/5 bg-[#F7F7F8] px-5 py-4 text-sm outline-none transition-all placeholder:text-black/25 focus:border-[#0A1A2B]/15 focus:bg-white focus:ring-2 focus:ring-[#0A1A2B]/5"
-                    placeholder="Adınız Soyadınız" />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="ml-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B]/35">E-Posta</label>
-                  <input type="email" name="email" required
-                    className="rounded-2xl border border-black/5 bg-[#F7F7F8] px-5 py-4 text-sm outline-none transition-all placeholder:text-black/25 focus:border-[#0A1A2B]/15 focus:bg-white focus:ring-2 focus:ring-[#0A1A2B]/5"
-                    placeholder="hello@example.com" />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="ml-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B]/35">Telefon</label>
-                  <input type="text" name="phone"
-                    className="rounded-2xl border border-black/5 bg-[#F7F7F8] px-5 py-4 text-sm outline-none transition-all placeholder:text-black/25 focus:border-[#0A1A2B]/15 focus:bg-white focus:ring-2 focus:ring-[#0A1A2B]/5"
-                    placeholder="+90 5xx xxx xx xx" />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="ml-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B]/35">Konu</label>
-                  <input type="text" name="subject"
-                    className="rounded-2xl border border-black/5 bg-[#F7F7F8] px-5 py-4 text-sm outline-none transition-all placeholder:text-black/25 focus:border-[#0A1A2B]/15 focus:bg-white focus:ring-2 focus:ring-[#0A1A2B]/5"
-                    placeholder="Mimari danışmanlık / yenileme / iç mekan" />
-                </div>
-
-                <div className="flex flex-col gap-2 md:col-span-2">
-                  <label className="ml-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#0A1A2B]/35">Mesajınız</label>
-                  <textarea name="message" required rows={6}
-                    className="resize-none rounded-[1.75rem] border border-black/5 bg-[#F7F7F8] px-5 py-5 text-sm outline-none transition-all placeholder:text-black/25 focus:border-[#0A1A2B]/15 focus:bg-white focus:ring-2 focus:ring-[#0A1A2B]/5 md:rounded-[2rem]"
-                    placeholder="Projenizden, beklentilerinizden ve mekan türünden kısaca bahsedin..." />
-                </div>
-
-                <div className="pt-2 md:col-span-2">
-                  <button type="submit"
-                    className="w-full rounded-full bg-[#0A1A2B] px-12 py-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-white shadow-[0_18px_40px_rgba(10,26,43,0.12)] transition-all duration-500 hover:-translate-y-0.5 hover:opacity-95 active:scale-95 md:w-auto">
-                    Mesajı Gönder
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
 
             <div className="lg:col-span-5 flex flex-col gap-6">

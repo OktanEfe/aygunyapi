@@ -3,12 +3,14 @@
 
 export type ProductItem = {
   name: string;
+  image?: string;
   desc?: string;
   bullets?: string[];
 };
 
 export type ProductGroup = {
   slug: string;
+  image?: string;
   title?: string;
   intro?: string;
   tags?: string[];
@@ -32,6 +34,7 @@ export const categories: Category[] = [
     groups: [
       {
         slug: "kapaklar",
+        image: "/assets/photos/mutfak-klasik/2.jpg",
         title: "Kapaklar",
         intro: "Mutfak tasarımına ve kullanım ihtiyacına göre farklı yüzey ve kapak seçenekleri.",
         tags: ["Lake", "Membran", "Akrilik", "Melamin"],
@@ -56,6 +59,7 @@ export const categories: Category[] = [
       },
       {
         slug: "tezgahlar",
+        image: "/assets/photos/mutfak-mermer/4.jpg",
         title: "Tezgâhlar",
         intro: "Farklı kullanım ihtiyaçlarına ve tasarım anlayışlarına uygun tezgâh seçenekleri.",
         tags: ["Porselen", "Çift Kat Porselen", "Kuvars", "Granit", "Mermer"],
@@ -84,6 +88,7 @@ export const categories: Category[] = [
       },
       {
         slug: "alinlar",
+        image: "/assets/photos/mutfak-mermer/1.jpg",
         title: "Alınlar",
         intro: "Tezgâh ve dolaplarla uyum sağlayan farklı malzeme ve yüzey seçenekleri.",
         tags: ["Seramik", "Porselen", "Kuvars", "Granit"],
@@ -108,6 +113,7 @@ export const categories: Category[] = [
       },
       {
         slug: "eviyeler",
+        image: "/assets/photos/mutfak-yesil/1.jpg",
         title: "Eviyeler",
         intro: "Farklı kullanım ihtiyaçlarına ve mutfak tasarımlarına uygun eviye seçenekleri.",
         tags: ["Tezgâh Altı", "Tezgâh Üstü", "Entegre", "Paslanmaz Çelik", "Porselen"],
@@ -136,6 +142,7 @@ export const categories: Category[] = [
       },
       {
         slug: "armaturler",
+        image: "/assets/photos/mutfak-mermer/3.jpg",
         title: "Armatürler",
         intro: "Farklı kullanım alışkanlıklarına ve mutfak düzenlerine uygun armatür seçenekleri.",
         tags: ["Tekli", "Spiralli", "Filtreli", "Sensörlü", "Çekilebilir Spiralli"],
@@ -168,6 +175,7 @@ export const categories: Category[] = [
     groups: [
       {
         slug: "banyo-dolaplari",
+        image: "/assets/photos/banyo/1.jpg",
         title: "Banyo Dolapları",
         tags: ["Lake", "Membran", "Akrilik", "Melamin"],
         items: [
@@ -191,6 +199,7 @@ export const categories: Category[] = [
       },
       {
         slug: "banyo-tezgahlari",
+        image: "/assets/photos/banyo/3.jpg",
         title: "Banyo Tezgâhları",
         tags: ["Porselen", "Çift Kat Porselen", "Kuvars", "Granit", "Mermer"],
         items: [
@@ -218,6 +227,7 @@ export const categories: Category[] = [
       },
       {
         slug: "lavabolar",
+        image: "/assets/photos/banyo/2.jpg",
         title: "Lavabolar",
         tags: ["Tezgâh Üstü Lavabo", "Tezgâh Altı Lavabo", "Yarım Tezgâh Lavabo", "Etajerli Lavabo", "Çanak Lavabo"],
         items: [
@@ -245,6 +255,7 @@ export const categories: Category[] = [
       },
       {
         slug: "klozetler",
+        image: "/assets/photos/banyo/4.jpg",
         title: "Klozetler",
         tags: ["Asma Klozet", "Ayaklı (Klasik) Klozet", "Duvara Sıfır (Tam Dayalı) Klozet", "Monoblok Klozet"],
         items: [
@@ -268,6 +279,7 @@ export const categories: Category[] = [
       },
       {
         slug: "banyo-armaturleri",
+        image: "/assets/photos/banyo/2.jpg",
         title: "Armatürler",
         items: [
           {
@@ -312,6 +324,7 @@ export const categories: Category[] = [
     groups: [
       {
         slug: "lake-kapilar",
+        image: "/assets/photos/dolap/3.jpg",
         title: "Lake Kapılar",
         intro:
           "MDF yüzey üzerine uygulanan lake boya ile pürüzsüz ve homojen bir görünüm sunar. Mat, yarı mat veya parlak yüzey seçenekleriyle farklı renk ve tasarımlara uyarlanabilir. Düz, çerçeveli ve farklı kapak/kanat detaylarıyla mekânın genel tasarımına uygun olarak özel ölçüde üretilebilir.",
@@ -335,26 +348,32 @@ export const categories: Category[] = [
         items: [
           {
             name: "TV Üniteleri",
+            image: "/assets/photos/tv-unitesi/2.jpg",
             desc: "Televizyon, depolama ve dekoratif kullanım ihtiyaçlarını bir arada ele alan, mekâna göre ölçülendirilen tasarımlardır.",
           },
           {
             name: "Vestiyer & Antre Mobilyaları",
+            image: "/assets/photos/dresuar/2.jpg",
             desc: "Giriş alanlarının kullanımını düzenleyen, askılık, depolama ve ayakkabı saklama ihtiyaçlarına göre tasarlanan özel mobilyalardır.",
           },
           {
             name: "Gömme Dolaplar & Gardıroplar",
+            image: "/assets/photos/dolap/1.jpg",
             desc: "Mekâna özel ölçülendirilen, depolama ihtiyacını düzenleyen ve duvarlarla bütünleşen dolap çözümleridir. Farklı iç düzen, kapak ve kullanım seçenekleriyle ihtiyaca göre tasarlanabilir.",
           },
           {
             name: "Kitaplık & Raf Sistemleri",
+            image: "/assets/photos/kitaplik/2.jpg",
             desc: "Kitap, obje ve günlük kullanım eşyaları için farklı ölçü ve düzenlerde tasarlanan açık veya kapalı depolama çözümleridir.",
           },
           {
             name: "Masa & Çalışma Alanları",
+            image: "/assets/photos/ofis/1.jpg",
             desc: "Mekânın ölçülerine ve kullanım amacına göre tasarlanan çalışma masası, konsol ve benzeri özel üretim mobilyalardır.",
           },
           {
             name: "Özel Üretim",
+            image: "/assets/photos/vitrin/2.jpg",
             desc: "Mekânın ihtiyaçlarına ve tasarımına özel olarak ölçülendirilen, farklı malzeme ve detaylarla üretilen mobilya çözümleridir.",
           },
         ],

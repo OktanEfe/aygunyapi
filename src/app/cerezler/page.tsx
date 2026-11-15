@@ -3,7 +3,7 @@ import LegalPage from "@/components/layout/LegalPage";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Çerez Politikası | Aygün Yapı",
+  title: "Çerez Politikası",
   description: "Aygün Yapı web sitesinde kullanılan çerezler hakkında bilgi.",
 };
 

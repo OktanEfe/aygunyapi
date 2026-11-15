@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import { CategoryShowcase } from "@/components/urunler/category";
 import { ProductAdvisory } from "@/components/urunler/CTA";
 import ProductsHero from "@/components/urunler/hero";
 import { Compass, MapPin, Layers } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Ürünler",
+  description:
+    "Mutfak sistemleri, banyo serileri, kapılar ve özel üretim mobilya çözümlerini keşfedin.",
+  alternates: { canonical: "/urunler" },
+};
 
 export default function ProductsPage() {
   const yaklasimKartlari = [

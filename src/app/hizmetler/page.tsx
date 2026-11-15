@@ -5,7 +5,8 @@ import SignatureService from "@/components/hizmetler/Signature";
 import ServicesCTA from "@/components/hizmetler/CTA";
 
 export const metadata: Metadata = {
-  title: "Hizmetlerimiz | Aygün Yapı",
+  title: "Hizmetlerimiz",
+  alternates: { canonical: "/hizmetler" },
   description: "Mutfak tasarımından anahtar teslim uygulamalara kadar, Aygün Yapı'nın premium mimari çözümlerini keşfedin.",
 };
 
