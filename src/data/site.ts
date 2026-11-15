@@ -2,7 +2,7 @@
 export const site = {
   name: "Aygün Yapı",
   // Yayın adresi — Vercel'de NEXT_PUBLIC_SITE_URL ortam değişkeniyle ayarlanır.
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://www.aygunyapi.com").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || "https://aygundecor.com").replace(/\/$/, ""),
   description:
     "Yalova merkezli tasarım ofisi. Tasarım, uygulama ve mobilya alanlarındaki deneyimimizle 1993’den beri güven inşa ediyoruz.",
   phoneDisplay: "+90 532 325 36 69",

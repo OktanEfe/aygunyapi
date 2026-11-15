@@ -5,7 +5,7 @@ import { site } from "@/data/site";
 // Gerekli ortam değişkenleri (.env.example'a bakın):
 //   RESEND_API_KEY      Resend API anahtarı
 //   CONTACT_TO_EMAIL    Formların gideceği adres (varsayılan: site e-postası)
-//   CONTACT_FROM_EMAIL  Resend'de doğrulanmış gönderici, ör. "Aygün Yapı <form@aygunyapi.com>"
+//   CONTACT_FROM_EMAIL  Resend'de doğrulanmış gönderici, ör. "Aygün Yapı <form@aygundecor.com>"
 
 export const runtime = "nodejs";
 
