@@ -3,8 +3,6 @@
 import KatalogHero from "@/components/katalog/KatalogHero";
 import KoleksiyonBloklari from "@/components/katalog/KoleksiyonBloklari";
 import IlhamPanosu from "@/components/katalog/IlhamPanosu";
-import KatalogGaleri from "@/components/katalog/Galeri";
-import PdfIndir from "@/components/katalog/PdfIndir";
 import ServicesCTA from "@/components/hizmetler/CTA";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -13,10 +11,8 @@ export default function KatalogPage() {
   return (
     <main className="min-h-screen bg-white">
       <KatalogHero />
-      <PdfIndir />
       <KoleksiyonBloklari />
       <IlhamPanosu />
-      <KatalogGaleri />
 
       <section className="relative overflow-hidden bg-[#F5F5F7] px-4 py-16 md:px-6 md:py-24">
         <div className="relative mx-auto w-full max-w-[1320px] overflow-hidden rounded-[2.5rem] border border-white/5 bg-[#0A1A2B] px-8 py-14 text-center shadow-[0_50px_100px_-30px_rgba(0,0,0,0.28)] md:rounded-[4rem] md:px-16 md:py-24">

@@ -24,9 +24,3 @@ export const photo = (group: string, n: number): Photo => {
   const g = photoGroups.find((x) => x.slug === group);
   return { src: `/assets/photos/${group}/${n}.jpg`, title: g?.title ?? "", category: g?.category ?? "" };
 };
-
-export const allPhotos: Photo[] = photoGroups.flatMap((g) =>
-  Array.from({ length: g.count }, (_, i) => photo(g.slug, i + 1)),
-);
-
-export const photoFilters = Array.from(new Set(photoGroups.map((g) => g.title)));
