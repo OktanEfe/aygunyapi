@@ -1,40 +1,23 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aygün Yapı — Web Sitesi
 
-## Getting Started
+Next.js (App Router) + Tailwind ile hazırlanmış Aygün Tasarım & Dekorasyon web sitesi.
 
-First, run the development server:
+## Çalıştırma
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Site http://localhost:3000 adresinde açılır.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## İçerik nerede?
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# aygun
->>>>>>> e11bbae84de53511c5ffe87db18f42f474269364
+| Ne | Dosya |
+| --- | --- |
+| Telefon, mail, WhatsApp, Instagram, adres | `src/data/site.ts` |
+| Projeler (başlık, açıklama, görseller) | `src/data/projects.ts` → görseller `public/assets/projects/<slug>/` |
+| Ürün kategorileri ve ürünler | `src/data/products.ts` |
+| Ana sayfa videoları | `public/assets/videos/` (+ kapak kareleri `public/assets/posters/`) |
+| Logo | `public/assets/logo.svg` |
+| Katalog PDF | `public/pdf/katalog.pdf` ekleyip `src/components/katalog/PdfIndir.tsx` içindeki `PDF_URL`'i açın |

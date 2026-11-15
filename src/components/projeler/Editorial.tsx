@@ -3,15 +3,18 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { projects as allProjects } from "@/data/projects";
 
-const categories = ["Tümü", "Mutfak", "Banyo", "İç Mekan", "Yenileme"];
+const projects = allProjects.map((p) => ({
+  id: p.slug,
+  slug: p.slug,
+  title: p.title,
+  type: p.category as string,
+  src: p.images[0],
+}));
 
-const projects = [
-  { id: 1, slug: "modern-loft", title: "Modern Loft", type: "İç Mekan", src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c" },
-  { id: 2, slug: "mermer-mutfak", title: "Mermer Dokulu Mutfak", type: "Mutfak", src: "https://images.unsplash.com/photo-1600566752355-35792bed3a88" },
-  { id: 3, slug: "spa-banyo", title: "Spa Konsept Banyo", type: "Banyo", src: "https://images.unsplash.com/photo-1600607687644-c7171b42498b" },
-  { id: 4, slug: "antik-restorasyon", title: "Antik Restorasyon", type: "Yenileme", src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde" },
-];
+const categories = ["Tümü", ...Array.from(new Set(projects.map((p) => p.type)))];
+
 
 export default function Editorial() {
   const [activeCategory, setActiveCategory] = useState("Tümü");
@@ -42,15 +45,16 @@ export default function Editorial() {
         </div>
 
         {/* Proje Kartları */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProjects.map((p) => (
             <div key={p.id} className="group">
               <Link href={`/projeler/${p.slug}`} className="block">
-                <div className="relative aspect-[16/10] overflow-hidden rounded-[2.5rem] mb-8 bg-[#0A1A2B]">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] mb-8 bg-[#0A1A2B]">
                   <Image 
-                    src={`${p.src}?q=80&w=1000`} 
+                    src={p.src} 
                     alt={p.title} 
                     fill 
+                    sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:opacity-60" 
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">

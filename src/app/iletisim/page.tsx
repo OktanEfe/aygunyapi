@@ -2,13 +2,14 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { site } from "@/data/site";
 
 const locations = [
   {
     id: 1,
     title: "Yalova Tasarım Ofisi",
     address: "Yalova Merkez / Türkiye",
-    phone: "+90 555 111 22 33",
+    phone: site.phoneDisplay,
     note: "Tasarım görüşmeleri ve proje planlama",
     image:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",
@@ -22,7 +23,7 @@ const locations = [
     id: 2,
     title: "İzmit Merkez Atölye",
     address: "İzmit, Kocaeli / Türkiye",
-    phone: "+90 555 111 22 33",
+    phone: site.phoneDisplay,
     note: "Uygulama, üretim ve operasyon merkezi",
     image:
       "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80",
@@ -163,7 +164,7 @@ export default function IletisimPage() {
                 Formu Doldurun
               </a>
               <a
-                href="tel:+905551112233"
+                href={site.phoneHref}
                 className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-7 py-4 text-[11px] font-semibold uppercase tracking-[0.28em] text-white backdrop-blur transition hover:bg-white hover:text-[#0A1A2B]"
               >
                 Hızlıca Arayın
@@ -259,14 +260,14 @@ export default function IletisimPage() {
                   <div className="space-y-8">
                     <div className="flex flex-col gap-2">
                       <span className="text-[9px] font-semibold uppercase tracking-[0.35em] text-white/30">Telefon</span>
-                      <a href="tel:+905551112233" className="text-xl font-light tracking-tight text-white transition hover:text-white/70">
-                        +90 555 111 22 33
+                      <a href={site.phoneHref} className="text-xl font-light tracking-tight text-white transition hover:text-white/70">
+                        {site.phoneDisplay}
                       </a>
                     </div>
                     <div className="flex flex-col gap-2">
                       <span className="text-[9px] font-semibold uppercase tracking-[0.35em] text-white/30">E-Posta</span>
-                      <a href="mailto:info@aygunyapi.com" className="break-words text-xl font-light tracking-tight text-white transition hover:text-white/70">
-                        info@aygunyapi.com
+                      <a href={`mailto:${site.email}`} className="break-words text-xl font-light tracking-tight text-white transition hover:text-white/70">
+                        {site.email}
                       </a>
                     </div>
                     <div className="flex flex-col gap-2">

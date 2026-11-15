@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categories, products } from "@/data/products";
+import { whatsappLink } from "@/data/site";
 
 type PageProps = {
   params: Promise<{
@@ -148,13 +149,21 @@ export default async function ProductDetailPage({ params }: PageProps) {
               </div>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <button className="flex-1 rounded-full bg-[#0A1A2B] px-8 py-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#0A1A2B]/90">
+                <Link
+                  href="/iletisim#proje-formu"
+                  className="flex-1 rounded-full bg-[#0A1A2B] px-8 py-5 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#0A1A2B]/90"
+                >
                   Teklif Al & Numune İste
-                </button>
+                </Link>
 
-                <button className="rounded-full border border-black/10 px-8 py-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A1A2B] transition hover:bg-[#F5F5F7]">
+                <a
+                  href={whatsappLink(`Merhaba, ${product.name} hakkında bilgi almak istiyorum.`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-black/10 px-8 py-5 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A1A2B] transition hover:bg-[#F5F5F7]"
+                >
                   WhatsApp Danışman
-                </button>
+                </a>
               </div>
             </div>
           </div>

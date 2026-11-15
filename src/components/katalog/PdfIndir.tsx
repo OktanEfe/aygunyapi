@@ -1,5 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { whatsappLink } from "@/data/site";
+
+// TODO: Katalog PDF'i hazır olunca public/pdf/katalog.pdf olarak ekleyip bunu "/pdf/katalog.pdf" yapın.
+const PDF_URL: string | null = null;
 
 export default function PdfIndir() {
   return (
@@ -51,18 +55,18 @@ export default function PdfIndir() {
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                 <Link
-                  href="/katalog/dijital"
+                  href="/urunler"
                   className="inline-flex items-center justify-center rounded-full bg-[#0A1A2B] px-9 py-5 text-[11px] font-semibold uppercase tracking-[0.26em] text-white transition-all duration-500 hover:-translate-y-0.5 hover:bg-[#13263a]"
                 >
                   Kataloğu İncele
                 </Link>
 
                 <a
-                  href="/pdf/katalog.pdf"
-                  download
+                  href={PDF_URL ?? whatsappLink("Merhaba, Aygün Yapı kataloğunu almak istiyorum.")}
+                  {...(PDF_URL ? { download: true } : { target: "_blank", rel: "noopener noreferrer" })}
                   className="inline-flex items-center justify-center rounded-full border border-black/10 bg-white px-9 py-5 text-[11px] font-semibold uppercase tracking-[0.26em] text-[#0A1A2B] transition-all duration-500 hover:-translate-y-0.5 hover:border-[#0A1A2B]/20 hover:bg-black/[0.03]"
                 >
-                  PDF İndir
+                  {PDF_URL ? "PDF İndir" : "Kataloğu WhatsApp'tan İste"}
                 </a>
               </div>
 

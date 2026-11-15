@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import ServicesHero from "@/components/hizmetler/Hero";
 import ServicesGrid from "@/components/hizmetler/Grid";
 import SignatureService from "@/components/hizmetler/Signature";
-import ProcessStrip from "@/components/hizmetler/Process";
 import ServicesCTA from "@/components/hizmetler/CTA";
 
 export const metadata: Metadata = {
@@ -16,7 +15,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesGrid />
       <SignatureService />
-      {/* <ProcessStrip /> */}
+      {/* Süreç bölümü gizli. Açmak için: import ProcessStrip from "@/components/hizmetler/Process"; ve <ProcessStrip /> */}
 
      
 

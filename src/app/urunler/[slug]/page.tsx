@@ -67,6 +67,17 @@ export default async function CategoryPage({ params }: PageProps) {
             </Link>
           </div>
 
+          {categoryProducts.length === 0 && (
+            <div className="rounded-[1.5rem] border border-dashed border-black/10 bg-white px-8 py-16 text-center">
+              <p className="text-lg font-light text-[#0A1A2B]">
+                Bu kategorideki ürünler yakında eklenecek.
+              </p>
+              <p className="mt-3 text-sm text-black/45">
+                Şimdilik size özel seçenekler için bizimle iletişime geçebilirsiniz.
+              </p>
+            </div>
+          )}
+
           <div className="grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
             {categoryProducts.map((product) => (
               <Link
@@ -116,9 +127,12 @@ export default async function CategoryPage({ params }: PageProps) {
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <button className="rounded-full bg-[#0A1A2B] px-10 py-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-white transition hover:opacity-90">
+            <Link
+              href="/iletisim#proje-formu"
+              className="rounded-full bg-[#0A1A2B] px-10 py-5 text-[11px] font-semibold uppercase tracking-[0.28em] text-white transition hover:opacity-90"
+            >
               Ücretsiz Danışmanlık Alın
-            </button>
+            </Link>
 
             <Link
               href="/iletisim"

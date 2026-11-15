@@ -1,32 +1,49 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+
+// Videolar dikey (9:16) çekim. Mobilde tam ekran, masaüstünde sağda dikey panel
+// olarak gösterilir; arka planı aynı karenin bulanık hali doldurur.
+const videos = [
+  {
+    src: "/assets/videos/video1.mp4",
+    poster: "/assets/posters/video1.jpg",
+    label: "Ahşap Merdiven",
+    sub: "Işıkla tamamlanan detaylar",
+  },
+  {
+    src: "/assets/videos/video2.mp4",
+    poster: "/assets/posters/video2.jpg",
+    label: "Özel Dolap",
+    sub: "Ölçüye göre, size göre",
+  },
+  {
+    src: "/assets/videos/video3.mp4",
+    poster: "/assets/posters/video3.jpg",
+    label: "Işıklı Vitrin",
+    sub: "Atölyeden mekâna",
+  },
+];
 
 export default function Hero() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [index, setIndex] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const videos = [
-    { src: "/assets/videos/video1.mp4", label: "Modern Mimari", sub: "Estetik ve Fonksiyon" },
-    { src: "/assets/videos/video2.mp4", label: "İç Mekan Tasarımı", sub: "Rafine Detaylar" },
-    { src: "/assets/videos/video3.mp4", label: "Lüks Yaşam Alanları", sub: "Yalova'nın İmzası" },
-  ];
-
-  const startAuto = () => {
+  const startAuto = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     timerRef.current = setInterval(() => {
       setIndex((i) => (i + 1) % videos.length);
     }, 8000);
-  };
+  }, []);
 
   useEffect(() => {
     startAuto();
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, []);
+  }, [startAuto]);
 
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
@@ -52,15 +69,23 @@ export default function Hero() {
             }`}
             style={{ transitionProperty: "opacity, transform" }}
           >
+            {/* Masaüstü arka planı: aynı karenin bulanık hali */}
+            <div
+              aria-hidden
+              className="absolute inset-0 hidden scale-110 bg-cover bg-center blur-2xl brightness-[0.35] lg:block"
+              style={{ backgroundImage: `url(${item.poster})` }}
+            />
             <video
               src={item.src}
+              poster={item.poster}
               muted
               loop
               playsInline
+              preload={i === 0 ? "auto" : "metadata"}
               ref={(el) => {
                 videoRefs.current[i] = el;
               }}
-              className="h-full w-full object-cover brightness-[0.45]"
+              className="h-full w-full object-cover brightness-[0.45] lg:absolute lg:top-1/2 lg:right-[14%] lg:h-[74vh] lg:w-auto lg:-translate-y-1/2 lg:rounded-[2rem] lg:object-cover lg:brightness-90 lg:shadow-[0_40px_120px_rgba(0,0,0,0.6)] lg:aspect-[9/16]"
             />
           </div>
         ))}

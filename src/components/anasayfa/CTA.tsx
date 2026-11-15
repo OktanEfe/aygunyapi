@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { site } from "@/data/site";
 
 export default function ContactCTA() {
   return (
@@ -76,7 +77,7 @@ export default function ContactCTA() {
                 </span>
 
                 <h3 className="mb-3 break-words text-2xl font-light tracking-tight text-white">
-                  info@aygunyapi.com
+                  {site.email}
                 </h3>
 
                 <p className="text-sm font-light leading-7 text-white/45">

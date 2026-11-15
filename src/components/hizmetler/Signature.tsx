@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SignatureService() {
   return (
@@ -18,9 +19,12 @@ export default function SignatureService() {
             <p className="text-lg text-white font-light mb-12 leading-relaxed">
               Bizim için proje, anahtarı teslim ettiğimizde bitmez. Yaşamın başladığı o ilk andaki konforunuzu garanti altına almak için tüm süreci tek elden yönetiyoruz.
             </p>
-            <button className="px-10 py-5 bg-white text-[#0A1A2B] rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform">
-              Süreci Keşfedin
-            </button>
+            <Link
+              href="/iletisim#proje-formu"
+              className="inline-block px-10 py-5 bg-white text-[#0A1A2B] rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform"
+            >
+              Süreci Başlatın
+            </Link>
           </div>
         </div>
       </div>

@@ -36,11 +36,14 @@ export default function Navbar() {
         <div className="flex-shrink-0">
           <Link href="/" className="block">
             <Image
-              src="/assets/logo.png"
+              src="/assets/logo.svg"
               alt="Aygün Yapı"
-              width={160}
-              height={40}
-              className="h-8 w-auto object-contain lg:h-10"
+              width={84}
+              height={100}
+              unoptimized
+              className={`h-11 w-auto object-contain transition-[filter] duration-500 lg:h-14 ${
+                scrolled || isOpen ? "" : "brightness-0 invert"
+              }`}
               priority
             />
           </Link>

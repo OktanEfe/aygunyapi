@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { site } from "@/data/site";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -80,9 +81,8 @@ export default function Footer() {
             
             <div className="flex gap-5">
               {[
-                { id: "instagram", link: "#" },
-                { id: "facebook", link: "#" },
-                { id: "linkedin", link: "#" }
+                { id: "instagram", link: site.instagram },
+                { id: "whatsapp", link: `https://wa.me/${site.whatsapp}` },
               ].map((social) => (
                 <a 
                   key={social.id} 
@@ -123,21 +123,21 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
               <div className="group">
                 <span className="text-[9px] font-bold tracking-widest text-white/20 uppercase block mb-1">Telefon</span>
-                <a href="tel:+905551112233" className="text-lg font-light hover:text-white transition-colors tracking-tight">
-                  +90 555 111 22 33
+                <a href={site.phoneHref} className="text-lg font-light hover:text-white transition-colors tracking-tight">
+                  {site.phoneDisplay}
                 </a>
               </div>
               <div className="group">
                 <span className="text-[9px] font-bold tracking-widest text-white/20 uppercase block mb-1">E-Posta</span>
-                <a href="mailto:info@aygunyapi.com" className="text-lg font-light hover:text-white transition-colors tracking-tight">
-                  info@aygunyapi.com
+                <a href={`mailto:${site.email}`} className="text-lg font-light hover:text-white transition-colors tracking-tight">
+                  {site.email}
                 </a>
               </div>
               <div className="group">
                 <span className="text-[9px] font-bold tracking-widest text-white/20 uppercase block mb-1">Adres</span>
                 <p className="text-sm font-light text-white/60 leading-relaxed">
-                  Yalova Tasarım & Uygulama Ofisi <br />
-                  Merkez, Yalova / Türkiye
+                  {site.addressLines[0]} <br />
+                  {site.addressLines[1]}
                 </p>
               </div>
             </div>

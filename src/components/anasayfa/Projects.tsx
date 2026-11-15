@@ -2,13 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { projects as allProjects } from "@/data/projects";
 
 export default function Projects() {
-  const projects = [
-    { id: 1, title: "Modern Villa Tasarımı", category: "Mimari", img: "/assets/projects/p1.jpg" },
-    { id: 2, title: "Lüks Ofis Dekorasyonu", category: "İç Mekan", img: "/assets/projects/p2.jpg" },
-    { id: 3, title: "Dış Cephe Kompozit", category: "Uygulama", img: "/assets/projects/p3.jpg" },
-  ];
+  const projects = allProjects.slice(0, 3).map((p) => ({
+    id: p.slug,
+    title: p.title,
+    category: p.category,
+    img: p.images[0],
+  }));
 
   return (
     <section className="py-24 md:py-32 bg-white overflow-hidden">
@@ -48,6 +50,7 @@ export default function Projects() {
                 src={p.img}
                 alt={p.title}
                 fill
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)]"
               />
               

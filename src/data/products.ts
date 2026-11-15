@@ -20,50 +20,86 @@ export type Category = {
     highlights: string[];
     usageAreas: string[];
   };
-  
+  //Bu KISMA BİR DAHA BAK GEREKİRSE JSONDAN ÇEK!!!!
   export const categories: Category[] = [
     {
-      slug: "mutfak",
-      title: "Mutfak Sistemleri",
+      slug: "mutfak-ve-tezgah",
+      title: "Mutfak ve Tezgah",
       shortTitle: "Mutfak Koleksiyonu",
       description:
-        "Kapak, tezgah ve yüzey uyumunu bir arada sunan seçili mutfak çözümlerini keşfedin.",
+        "Mutfak dolapları, tezgah çözümleri ve yüzey uyumunu bir araya getiren modern, işlevsel ve estetik mutfak uygulamalarını keşfedin.",
       image:
         "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200",
     },
     {
       slug: "banyo",
-      title: "Banyo Serileri",
+      title: "Banyo",
       shortTitle: "Banyo Koleksiyonu",
       description:
-        "Islak hacimler için dengeli, rafine ve dayanıklı yüzey alternatiflerini inceleyin.",
+        "Banyo dolapları, lavabo üniteleri ve neme dayanıklı yüzeylerle şekillenen rafine, dengeli ve uzun ömürlü banyo çözümlerini inceleyin.",
       image:
         "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200",
     },
     {
-      slug: "kapak",
-      title: "Panel & Kapak",
-      shortTitle: "Kapak Koleksiyonu",
+      slug: "kapi",
+      title: "Kapı",
+      shortTitle: "Kapı Koleksiyonu",
       description:
-        "Mat, lake ve doğal doku yüzeylerle şekillenen rafine panel ve kapak alternatiflerini keşfedin.",
+        "İç mekanın karakterini belirleyen modern, sade ve güçlü çizgilere sahip kapı tasarımlarını; malzeme, renk ve doku uyumuyla keşfedin.",
+      image:
+        "https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1200",
+    },
+    {
+      slug: "tv-unitesi",
+      title: "TV Ünitesi",
+      shortTitle: "Ünite Koleksiyonu",
+      description:
+        "Salon ve yaşam alanlarında estetik, depolama ve bütünlük sunan modern TV ünitesi çözümlerini farklı yüzey ve tasarım dilleriyle inceleyin.",
+      image:
+        "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200",
+    },
+    {
+      slug: "portmanto-dresuar",
+      title: "Portmanto & Dresuar",
+      shortTitle: "Giriş Alanı Koleksiyonu",
+      description:
+        "Antre ve giriş alanlarında düzen, işlev ve şıklığı bir araya getiren portmanto ve dresuar tasarımlarını keşfedin.",
       image:
         "https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200",
     },
     {
-      slug: "tezgah",
-      title: "Kuvars Tezgahlar",
-      shortTitle: "Tezgah Koleksiyonu",
+      slug: "giyinme-dolabi-ve-odasi",
+      title: "Giyinme Dolabı ve Odası",
+      shortTitle: "Giyinme Koleksiyonu",
       description:
-        "Dayanıklılığı güçlü görünümle birleştiren kuvars ve taş yüzey tezgah alternatiflerini inceleyin.",
+        "Kıyafet, aksesuar ve depolama ihtiyaçlarını daha düzenli ve rafine bir düzende sunan özel giyinme dolabı ve oda çözümlerini inceleyin.",
       image:
-        "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=1200",
+        "https://images.unsplash.com/photo-1616594039964-3b1c0d4ef10f?q=80&w=1200",
+    },
+    {
+      slug: "bar-mutfak-kahve-tezgahi",
+      title: "Bar Mutfak (Kahve Tezgahı)",
+      shortTitle: "Kahve & Bar Koleksiyonu",
+      description:
+        "Ev ve yaşam alanlarında kahve köşesi, bar tezgahı ve servis alanı oluşturmak için tasarlanan özel yüzey ve mobilya çözümlerini keşfedin.",
+      image:
+        "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1200",
+    },
+    {
+      slug: "agac-islemeler",
+      title: "Ağaç İşlemeler",
+      shortTitle: "Ahşap İşçilik Koleksiyonu",
+      description:
+        "Doğal dokuyu öne çıkaran özel ahşap işçilik, dekoratif uygulama ve detay çözümleriyle yaşam alanlarına karakter kazandıran tasarımları inceleyin.",
+      image:
+        "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200",
     },
   ];
   
   export const products: Product[] = [
     {
       slug: "calacatta-gold",
-      categorySlug: "tezgah",
+      categorySlug: "mutfak-ve-tezgah",
       name: "Calacatta Gold",
       subtitle: "Kuvars Yüzey / İtalyan Serisi",
       brand: "Premium Series",
@@ -101,7 +137,7 @@ export type Category = {
     },
     {
       slug: "natural-oak",
-      categorySlug: "kapak",
+      categorySlug: "mutfak-ve-tezgah",
       name: "Natural Oak",
       subtitle: "Panel & Kapak / Doğal Doku",
       brand: "Naturel Series",
